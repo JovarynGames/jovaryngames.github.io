@@ -1146,7 +1146,7 @@ body.light-theme .orbit-tag {
 
 
 /* =========================
-   GAMES SECTION
+   GAMES
 ========================= */
 
 .games-section {
@@ -1223,11 +1223,422 @@ body.light-theme .orbit-tag {
 
     letter-spacing: 0.04em;
 
-    z-index: 5;
+    z-index: 20;
 
     text-shadow:
         0 8px 25px
         rgba(0, 0, 0, 0.7);
+}
+
+
+/* =========================================================
+   TEMPLE OF TRIALS ART
+========================================================= */
+
+.temple-art {
+    background:
+        radial-gradient(
+            circle at 50% 38%,
+            rgba(66, 161, 255, 0.18),
+            transparent 22%
+        ),
+        linear-gradient(
+            180deg,
+            #101c2d 0%,
+            #152335 43%,
+            #211a13 100%
+        );
+}
+
+
+/* Ancient atmosphere */
+
+.temple-art::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.38),
+            transparent 25%,
+            transparent 75%,
+            rgba(0, 0, 0, 0.38)
+        );
+
+    z-index: 1;
+}
+
+
+/* Temple glow */
+
+.temple-art::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 35px;
+
+    width: 190px;
+    height: 190px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(60, 180, 255, 0.22),
+            rgba(60, 180, 255, 0.06) 40%,
+            transparent 70%
+        );
+
+    transform:
+        translateX(-50%);
+
+    filter:
+        blur(8px);
+
+    animation:
+        templeLightPulse
+        4s
+        ease-in-out
+        infinite;
+
+    z-index: 2;
+}
+
+
+/* Sun / ancient light */
+
+.temple-sun {
+    position: absolute;
+
+    top: 28px;
+    left: 50%;
+
+    width: 76px;
+    height: 76px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            #fff4bc 0%,
+            #e4b95b 35%,
+            rgba(222, 160, 66, 0.2) 68%,
+            transparent 72%
+        );
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 35px rgba(255, 205, 103, 0.3);
+
+    z-index: 3;
+}
+
+
+/* Pillars */
+
+.temple-pillar {
+    position: absolute;
+
+    bottom: 42px;
+
+    width: 64px;
+    height: 170px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #554326,
+            #a27b3d 28%,
+            #c89c52 50%,
+            #80612f 72%,
+            #44341f
+        );
+
+    border:
+        1px solid
+        rgba(255, 220, 150, 0.15);
+
+    box-shadow:
+        0 14px 28px
+        rgba(0, 0, 0, 0.38);
+
+    z-index: 6;
+}
+
+
+/* Pillar tops */
+
+.temple-pillar::before {
+    content: "";
+
+    position: absolute;
+
+    top: -17px;
+    left: -9px;
+
+    width: 82px;
+    height: 18px;
+
+    background:
+        linear-gradient(
+            #c39950,
+            #725429
+        );
+
+    border-radius:
+        3px 3px 0 0;
+}
+
+
+/* Pillar bases */
+
+.temple-pillar::after {
+    content: "";
+
+    position: absolute;
+
+    left: -10px;
+    bottom: -11px;
+
+    width: 84px;
+    height: 14px;
+
+    background:
+        linear-gradient(
+            #b28847,
+            #5a4224
+        );
+
+    border-radius: 2px;
+}
+
+.temple-pillar-left {
+    left: 72px;
+}
+
+.temple-pillar-right {
+    right: 72px;
+}
+
+
+/* Temple doorway */
+
+.temple-door {
+    position: absolute;
+
+    left: 50%;
+    bottom: 42px;
+
+    width: 145px;
+    height: 175px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            180deg,
+            #151d27,
+            #080d13
+        );
+
+    border:
+        10px solid #76572f;
+
+    border-bottom: none;
+
+    border-radius:
+        72px 72px 0 0;
+
+    box-shadow:
+        inset 0 0 45px rgba(50, 170, 255, 0.13),
+        0 0 30px rgba(0, 0, 0, 0.45);
+
+    z-index: 5;
+}
+
+
+/* Ancient doorway pattern */
+
+.temple-door::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 14px;
+
+    border:
+        1px solid
+        rgba(223, 173, 86, 0.18);
+
+    border-radius:
+        60px 60px 0 0;
+}
+
+
+/* Crystal pedestal */
+
+.temple-door::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 5px;
+
+    width: 62px;
+    height: 18px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            #937039,
+            #40301c
+        );
+
+    clip-path:
+        polygon(
+            12% 0,
+            88% 0,
+            100% 100%,
+            0 100%
+        );
+}
+
+
+/* Ancient Crystal */
+
+.temple-crystal {
+    position: absolute;
+
+    left: 50%;
+    bottom: 31px;
+
+    width: 38px;
+    height: 58px;
+
+    transform:
+        translateX(-50%)
+        rotate(45deg);
+
+    background:
+        linear-gradient(
+            135deg,
+            #a9f1ff,
+            #2bc0ff 42%,
+            #416dff 75%,
+            #634eff
+        );
+
+    border:
+        1px solid
+        rgba(220, 250, 255, 0.75);
+
+    box-shadow:
+        0 0 15px rgba(79, 202, 255, 0.9),
+        0 0 38px rgba(67, 149, 255, 0.65),
+        0 0 70px rgba(99, 78, 255, 0.25);
+
+    animation:
+        templeCrystalFloat
+        2.8s
+        ease-in-out
+        infinite;
+
+    z-index: 10;
+}
+
+
+/* Crystal inner shine */
+
+.temple-crystal::before {
+    content: "";
+
+    position: absolute;
+
+    top: 7px;
+    left: 7px;
+
+    width: 8px;
+    height: 24px;
+
+    background:
+        rgba(255, 255, 255, 0.58);
+
+    border-radius: 5px;
+
+    filter:
+        blur(1px);
+}
+
+
+/* Temple floor */
+
+.temple-floor {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 49px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #30261c 0,
+            #30261c 55px,
+            #3c3022 55px,
+            #3c3022 57px
+        );
+
+    border-top:
+        2px solid
+        rgba(202, 157, 82, 0.25);
+
+    z-index: 8;
+}
+
+
+/* Floor perspective lines */
+
+.temple-floor::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0,
+            transparent 22px,
+            rgba(210, 170, 100, 0.12) 22px,
+            rgba(210, 170, 100, 0.12) 24px
+        );
+}
+
+
+/* Temple card special hover */
+
+.game-card:has(.temple-art):hover {
+    border-color:
+        rgba(66, 165, 255, 0.34);
+
+    box-shadow:
+        0 24px 65px
+        rgba(23, 101, 166, 0.18);
 }
 
 
@@ -1764,6 +2175,37 @@ body.light-theme .orbit-tag {
     box-shadow:
         0 10px 30px
         rgba(124, 255, 79, 0.16);
+}
+
+
+/* Temple button gets blue accent */
+
+.game-card:has(.temple-art) .play-button {
+    background:
+        linear-gradient(
+            135deg,
+            #52d8ff,
+            #6683ff
+        );
+
+    color: #07101b;
+
+    box-shadow:
+        0 10px 28px
+        rgba(72, 161, 255, 0.18);
+}
+
+.game-card:has(.temple-art) .play-button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #83e7ff,
+            #849bff
+        );
+
+    box-shadow:
+        0 14px 35px
+        rgba(72, 161, 255, 0.3);
 }
 
 
@@ -2780,9 +3222,9 @@ body.light-theme .footer {
 }
 
 
-/* =========================
+/* =========================================================
    ANIMATIONS
-========================= */
+========================================================= */
 
 @keyframes loaderAnimation {
 
@@ -2905,6 +3347,56 @@ body.light-theme .footer {
 }
 
 
+/* Temple glowing background */
+
+@keyframes templeLightPulse {
+
+    0%,
+    100% {
+        opacity: 0.65;
+
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            scale(1.14);
+    }
+}
+
+
+/* Ancient crystal movement */
+
+@keyframes templeCrystalFloat {
+
+    0%,
+    100% {
+        transform:
+            translateX(-50%)
+            translateY(0)
+            rotate(45deg);
+
+        filter:
+            brightness(1);
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            translateY(-8px)
+            rotate(45deg);
+
+        filter:
+            brightness(1.25);
+    }
+}
+
+
 @keyframes parkourJump {
 
     0%,
@@ -2984,9 +3476,9 @@ body.light-theme .footer {
 }
 
 
-/* =========================
+/* =========================================================
    TABLET
-========================= */
+========================================================= */
 
 @media (max-width: 1000px) {
 
@@ -3051,9 +3543,9 @@ body.light-theme .footer {
 }
 
 
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media (max-width: 760px) {
 
@@ -3183,6 +3675,39 @@ body.light-theme .footer {
         height: 220px;
     }
 
+    /* Temple artwork mobile */
+
+    .temple-pillar {
+        height: 145px;
+        width: 52px;
+    }
+
+    .temple-pillar::before {
+        width: 68px;
+    }
+
+    .temple-pillar::after {
+        width: 70px;
+    }
+
+    .temple-pillar-left {
+        left: 55px;
+    }
+
+    .temple-pillar-right {
+        right: 55px;
+    }
+
+    .temple-door {
+        width: 125px;
+        height: 150px;
+    }
+
+    .temple-crystal {
+        width: 32px;
+        height: 49px;
+    }
+
     .stats-grid {
         grid-template-columns:
             repeat(2, 1fr);
@@ -3210,9 +3735,9 @@ body.light-theme .footer {
 }
 
 
-/* =========================
+/* =========================================================
    SMALL PHONES
-========================= */
+========================================================= */
 
 @media (max-width: 480px) {
 
@@ -3285,6 +3810,27 @@ body.light-theme .footer {
         width: 100%;
     }
 
+
+    /* Temple small phone */
+
+    .temple-pillar-left {
+        left: 35px;
+    }
+
+    .temple-pillar-right {
+        right: 35px;
+    }
+
+    .temple-door {
+        width: 110px;
+    }
+
+    .temple-sun {
+        width: 64px;
+        height: 64px;
+    }
+
+
     .timeline-item {
         grid-template-columns:
             50px
@@ -3333,9 +3879,9 @@ body.light-theme .footer {
 }
 
 
-/* =========================
+/* =========================================================
    REDUCED MOTION
-========================= */
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
