@@ -29,12 +29,18 @@
     --purple: #9b72ff;
     --orange: #ff9b4b;
 
+    --fire: #ff654d;
+    --ice: #55d8ff;
+    --lightning: #ffd84f;
+    --nature: #67e56e;
+    --shadow: #a278ff;
+
     --border: rgba(255, 255, 255, 0.09);
     --green-border: rgba(124, 255, 79, 0.28);
 
     --header-background: rgba(7, 10, 15, 0.86);
 
-    --shadow:
+    --shadow-box:
         0 20px 60px rgba(0, 0, 0, 0.3);
 
     --radius: 18px;
@@ -66,7 +72,7 @@ body.light-theme {
     --header-background:
         rgba(244, 247, 251, 0.9);
 
-    --shadow:
+    --shadow-box:
         0 20px 60px rgba(20, 40, 70, 0.12);
 }
 
@@ -144,7 +150,7 @@ ul {
 }
 
 .section-heading {
-    max-width: 680px;
+    max-width: 720px;
 
     margin:
         0
@@ -310,7 +316,8 @@ ul {
         );
 
     box-shadow:
-        0 0 15px rgba(124, 255, 79, 0.45);
+        0 0 15px
+        rgba(124, 255, 79, 0.45);
 
     z-index: 9999;
 }
@@ -370,7 +377,7 @@ ul {
     align-items: center;
     justify-content: space-between;
 
-    gap: 30px;
+    gap: 24px;
 }
 
 .logo {
@@ -390,7 +397,7 @@ ul {
     display: flex;
     align-items: center;
 
-    gap: 5px;
+    gap: 3px;
 }
 
 .nav-link {
@@ -400,11 +407,11 @@ ul {
 
     padding:
         10px
-        14px;
+        12px;
 
     color: var(--text-2);
 
-    font-size: 0.9rem;
+    font-size: 0.86rem;
     font-weight: 650;
 
     border-radius: 9px;
@@ -594,13 +601,6 @@ ul {
     background-size:
         52px
         52px;
-
-    mask-image:
-        linear-gradient(
-            to bottom,
-            black,
-            transparent
-        );
 }
 
 .glow {
@@ -1197,7 +1197,7 @@ body.light-theme .orbit-tag {
         rgba(124, 255, 79, 0.27);
 
     box-shadow:
-        var(--shadow);
+        var(--shadow-box);
 }
 
 .game-art {
@@ -1231,9 +1231,9 @@ body.light-theme .orbit-tag {
 }
 
 
-/* =========================================================
-   TEMPLE OF TRIALS ART
-========================================================= */
+/* =========================
+   TEMPLE ART
+========================= */
 
 .temple-art {
     background:
@@ -1249,9 +1249,6 @@ body.light-theme .orbit-tag {
             #211a13 100%
         );
 }
-
-
-/* Ancient atmosphere */
 
 .temple-art::before {
     content: "";
@@ -1271,46 +1268,6 @@ body.light-theme .orbit-tag {
 
     z-index: 1;
 }
-
-
-/* Temple glow */
-
-.temple-art::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: 35px;
-
-    width: 190px;
-    height: 190px;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(60, 180, 255, 0.22),
-            rgba(60, 180, 255, 0.06) 40%,
-            transparent 70%
-        );
-
-    transform:
-        translateX(-50%);
-
-    filter:
-        blur(8px);
-
-    animation:
-        templeLightPulse
-        4s
-        ease-in-out
-        infinite;
-
-    z-index: 2;
-}
-
-
-/* Sun / ancient light */
 
 .temple-sun {
     position: absolute;
@@ -1341,9 +1298,6 @@ body.light-theme .orbit-tag {
     z-index: 3;
 }
 
-
-/* Pillars */
-
 .temple-pillar {
     position: absolute;
 
@@ -1366,15 +1320,8 @@ body.light-theme .orbit-tag {
         1px solid
         rgba(255, 220, 150, 0.15);
 
-    box-shadow:
-        0 14px 28px
-        rgba(0, 0, 0, 0.38);
-
     z-index: 6;
 }
-
-
-/* Pillar tops */
 
 .temple-pillar::before {
     content: "";
@@ -1392,13 +1339,7 @@ body.light-theme .orbit-tag {
             #c39950,
             #725429
         );
-
-    border-radius:
-        3px 3px 0 0;
 }
-
-
-/* Pillar bases */
 
 .temple-pillar::after {
     content: "";
@@ -1416,8 +1357,6 @@ body.light-theme .orbit-tag {
             #b28847,
             #5a4224
         );
-
-    border-radius: 2px;
 }
 
 .temple-pillar-left {
@@ -1427,9 +1366,6 @@ body.light-theme .orbit-tag {
 .temple-pillar-right {
     right: 72px;
 }
-
-
-/* Temple doorway */
 
 .temple-door {
     position: absolute;
@@ -1445,7 +1381,6 @@ body.light-theme .orbit-tag {
 
     background:
         linear-gradient(
-            180deg,
             #151d27,
             #080d13
         );
@@ -1458,33 +1393,8 @@ body.light-theme .orbit-tag {
     border-radius:
         72px 72px 0 0;
 
-    box-shadow:
-        inset 0 0 45px rgba(50, 170, 255, 0.13),
-        0 0 30px rgba(0, 0, 0, 0.45);
-
     z-index: 5;
 }
-
-
-/* Ancient doorway pattern */
-
-.temple-door::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 14px;
-
-    border:
-        1px solid
-        rgba(223, 173, 86, 0.18);
-
-    border-radius:
-        60px 60px 0 0;
-}
-
-
-/* Crystal pedestal */
 
 .temple-door::after {
     content: "";
@@ -1505,18 +1415,7 @@ body.light-theme .orbit-tag {
             #937039,
             #40301c
         );
-
-    clip-path:
-        polygon(
-            12% 0,
-            88% 0,
-            100% 100%,
-            0 100%
-        );
 }
-
-
-/* Ancient Crystal */
 
 .temple-crystal {
     position: absolute;
@@ -1546,8 +1445,7 @@ body.light-theme .orbit-tag {
 
     box-shadow:
         0 0 15px rgba(79, 202, 255, 0.9),
-        0 0 38px rgba(67, 149, 255, 0.65),
-        0 0 70px rgba(99, 78, 255, 0.25);
+        0 0 38px rgba(67, 149, 255, 0.65);
 
     animation:
         templeCrystalFloat
@@ -1557,32 +1455,6 @@ body.light-theme .orbit-tag {
 
     z-index: 10;
 }
-
-
-/* Crystal inner shine */
-
-.temple-crystal::before {
-    content: "";
-
-    position: absolute;
-
-    top: 7px;
-    left: 7px;
-
-    width: 8px;
-    height: 24px;
-
-    background:
-        rgba(255, 255, 255, 0.58);
-
-    border-radius: 5px;
-
-    filter:
-        blur(1px);
-}
-
-
-/* Temple floor */
 
 .temple-floor {
     position: absolute;
@@ -1602,43 +1474,7 @@ body.light-theme .orbit-tag {
             #3c3022 57px
         );
 
-    border-top:
-        2px solid
-        rgba(202, 157, 82, 0.25);
-
     z-index: 8;
-}
-
-
-/* Floor perspective lines */
-
-.temple-floor::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        repeating-linear-gradient(
-            0deg,
-            transparent 0,
-            transparent 22px,
-            rgba(210, 170, 100, 0.12) 22px,
-            rgba(210, 170, 100, 0.12) 24px
-        );
-}
-
-
-/* Temple card special hover */
-
-.game-card:has(.temple-art):hover {
-    border-color:
-        rgba(66, 165, 255, 0.34);
-
-    box-shadow:
-        0 24px 65px
-        rgba(23, 101, 166, 0.18);
 }
 
 
@@ -1664,10 +1500,6 @@ body.light-theme .orbit-tag {
             #75d653 0 7px,
             #5b4938 7px
         );
-
-    box-shadow:
-        0 14px 18px
-        rgba(0, 0, 0, 0.25);
 }
 
 .p1 {
@@ -1742,10 +1574,6 @@ body.light-theme .orbit-tag {
         );
 
     border-radius: 50%;
-
-    box-shadow:
-        0 0 45px
-        rgba(103, 177, 228, 0.3);
 }
 
 .zombie {
@@ -1796,10 +1624,6 @@ body.light-theme .orbit-tag {
     height: 7px;
 
     background: #ff545d;
-
-    box-shadow:
-        0 0 10px
-        rgba(255, 84, 93, 0.9);
 }
 
 .left-eye {
@@ -1882,10 +1706,6 @@ body.light-theme .orbit-tag {
     transform:
         translateX(-50%)
         rotate(45deg);
-
-    box-shadow:
-        0 0 45px
-        rgba(124, 255, 79, 0.2);
 }
 
 .enemy {
@@ -1913,15 +1733,11 @@ body.light-theme .orbit-tag {
 .e2 {
     top: 70px;
     right: 75px;
-
-    animation-delay: -0.7s;
 }
 
 .e3 {
     top: 40px;
     left: 48%;
-
-    animation-delay: -1.3s;
 }
 
 
@@ -1953,10 +1769,6 @@ body.light-theme .orbit-tag {
         );
 
     border-radius: 10px;
-
-    box-shadow:
-        0 15px 25px
-        rgba(0, 0, 0, 0.35);
 }
 
 .factory-machine::before {
@@ -1971,8 +1783,7 @@ body.light-theme .orbit-tag {
     height: 38px;
 
     border:
-        5px solid
-        #ff744c;
+        5px solid #ff744c;
 
     border-radius: 50%;
 }
@@ -2178,34 +1989,1106 @@ body.light-theme .orbit-tag {
 }
 
 
-/* Temple button gets blue accent */
+/* =========================================================
+   BEDROCK ADD-ONS
+========================================================= */
 
-.game-card:has(.temple-art) .play-button {
+.addons-section {
+    position: relative;
+
+    padding:
+        120px
+        0;
+
     background:
         linear-gradient(
-            135deg,
-            #52d8ff,
-            #6683ff
+            180deg,
+            var(--background),
+            var(--background-3),
+            var(--background)
         );
 
-    color: #07101b;
-
-    box-shadow:
-        0 10px 28px
-        rgba(72, 161, 255, 0.18);
+    overflow: hidden;
 }
 
-.game-card:has(.temple-art) .play-button:hover {
+.addons-section::before {
+    content: "";
+
+    position: absolute;
+
+    top: 120px;
+    left: -220px;
+
+    width: 500px;
+    height: 500px;
+
+    background:
+        rgba(66, 165, 255, 0.08);
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    pointer-events: none;
+}
+
+.addons-section::after {
+    content: "";
+
+    position: absolute;
+
+    right: -220px;
+    bottom: 120px;
+
+    width: 500px;
+    height: 500px;
+
+    background:
+        rgba(155, 114, 255, 0.08);
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    pointer-events: none;
+}
+
+.addons-section .container {
+    position: relative;
+
+    z-index: 2;
+}
+
+.addons-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 28px;
+}
+
+.addon-card {
+    overflow: hidden;
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        22px;
+
+    box-shadow:
+        0 20px 55px
+        rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.addon-card:hover {
+    transform:
+        translateY(-9px);
+
+    border-color:
+        rgba(124, 255, 79, 0.23);
+
+    box-shadow:
+        0 28px 75px
+        rgba(0, 0, 0, 0.28);
+}
+
+
+/* =========================
+   ADD-ON ART
+========================= */
+
+.addon-art {
+    position: relative;
+
+    height: 310px;
+
+    overflow: hidden;
+
+    isolation: isolate;
+}
+
+.addon-number {
+    position: absolute;
+
+    left: 22px;
+    bottom: 18px;
+
+    padding:
+        7px
+        10px;
+
+    background:
+        rgba(5, 8, 12, 0.72);
+
+    color: white;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.14);
+
+    border-radius: 8px;
+
+    backdrop-filter: blur(10px);
+
+    font-size: 0.68rem;
+    font-weight: 850;
+
+    letter-spacing: 0.12em;
+
+    z-index: 20;
+}
+
+
+/* =========================================================
+   ELEMENTAL TOOLS ART
+========================================================= */
+
+.tools-addon-art {
+    display: grid;
+    place-items: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(124, 255, 79, 0.10),
+            transparent 36%
+        ),
+        linear-gradient(
+            145deg,
+            #121b27,
+            #071019
+        );
+}
+
+.tools-addon-art::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        30px
+        30px;
+
+    z-index: -1;
+}
+
+.addon-center-symbol {
+    position: relative;
+
+    width: 112px;
+    height: 112px;
+
+    display: grid;
+    place-items: center;
+
     background:
         linear-gradient(
             135deg,
-            #83e7ff,
-            #849bff
+            rgba(124, 255, 79, 0.18),
+            rgba(66, 165, 255, 0.14)
+        );
+
+    color: white;
+
+    border:
+        2px solid
+        rgba(124, 255, 79, 0.34);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 0 60px
+        rgba(124, 255, 79, 0.15);
+
+    font-size: 3.6rem;
+
+    transform:
+        rotate(45deg);
+
+    z-index: 5;
+
+    animation:
+        addonCenterFloat
+        4s
+        ease-in-out
+        infinite;
+}
+
+.addon-center-symbol::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -22px;
+
+    border:
+        1px dashed
+        rgba(124, 255, 79, 0.25);
+
+    border-radius: 38px;
+
+    animation:
+        orbitRotate
+        14s
+        linear
+        infinite;
+}
+
+.addon-center-symbol {
+    text-shadow:
+        0 0 20px
+        rgba(255, 255, 255, 0.3);
+}
+
+.element-orb {
+    position: absolute;
+
+    width: 52px;
+    height: 52px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 15px;
+
+    font-weight: 950;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.35);
+
+    animation:
+        elementalOrbFloat
+        4s
+        ease-in-out
+        infinite;
+
+    z-index: 6;
+}
+
+.fire-orb {
+    top: 45px;
+    left: 70px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffae50,
+            var(--fire)
+        );
+
+    color: #3a1009;
+}
+
+.ice-orb {
+    top: 45px;
+    right: 70px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e2fbff,
+            var(--ice)
+        );
+
+    color: #073345;
+
+    animation-delay: -0.7s;
+}
+
+.lightning-orb {
+    top: 125px;
+    right: 35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff6a2,
+            var(--lightning)
+        );
+
+    color: #3c3000;
+
+    animation-delay: -1.4s;
+}
+
+.nature-orb {
+    bottom: 43px;
+    right: 100px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b3ff95,
+            var(--nature)
+        );
+
+    color: #093c12;
+
+    animation-delay: -2.1s;
+}
+
+.shadow-orb {
+    bottom: 43px;
+    left: 100px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #cfbaff,
+            #7251d8
+        );
+
+    color: #1d0d42;
+
+    animation-delay: -2.8s;
+}
+
+
+/* =========================================================
+   ELEMENTAL GUARDIANS ART
+========================================================= */
+
+.guardians-addon-art {
+    display: grid;
+    place-items: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(87, 157, 255, 0.16),
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            #111725,
+            #070910
+        );
+}
+
+.guardian-aura {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+}
+
+.aura-one {
+    width: 230px;
+    height: 230px;
+
+    border:
+        1px solid
+        rgba(99, 167, 255, 0.2);
+
+    animation:
+        guardianAura
+        5s
+        ease-in-out
+        infinite;
+}
+
+.aura-two {
+    width: 175px;
+    height: 175px;
+
+    border:
+        1px dashed
+        rgba(155, 114, 255, 0.28);
+
+    animation:
+        orbitReverse
+        14s
+        linear
+        infinite;
+}
+
+.guardian-symbol {
+    position: relative;
+
+    width: 115px;
+    height: 155px;
+
+    z-index: 6;
+
+    animation:
+        guardianFloat
+        4s
+        ease-in-out
+        infinite;
+}
+
+.guardian-head {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 82px;
+    height: 70px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            145deg,
+            #4b637c,
+            #1d2c3c
+        );
+
+    border:
+        2px solid
+        rgba(110, 196, 255, 0.38);
+
+    border-radius:
+        18px 18px 11px 11px;
+
+    box-shadow:
+        0 0 35px
+        rgba(74, 171, 255, 0.2);
+}
+
+.guardian-head::before,
+.guardian-head::after {
+    content: "";
+
+    position: absolute;
+
+    top: -17px;
+
+    width: 19px;
+    height: 27px;
+
+    background:
+        linear-gradient(
+            #6587aa,
+            #26394c
+        );
+
+    border-radius:
+        5px 5px 2px 2px;
+}
+
+.guardian-head::before {
+    left: 8px;
+
+    transform:
+        rotate(-18deg);
+}
+
+.guardian-head::after {
+    right: 8px;
+
+    transform:
+        rotate(18deg);
+}
+
+.guardian-head span {
+    position: absolute;
+
+    top: 27px;
+
+    width: 14px;
+    height: 8px;
+
+    background:
+        #70e6ff;
+
+    border-radius: 3px;
+
+    box-shadow:
+        0 0 14px
+        rgba(112, 230, 255, 0.95);
+}
+
+.guardian-head span:first-child {
+    left: 17px;
+}
+
+.guardian-head span:last-child {
+    right: 17px;
+}
+
+.guardian-body {
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 104px;
+    height: 94px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            145deg,
+            #344a61,
+            #182431
+        );
+
+    border:
+        2px solid
+        rgba(104, 188, 255, 0.26);
+
+    clip-path:
+        polygon(
+            18% 0,
+            82% 0,
+            100% 100%,
+            0 100%
+        );
+}
+
+.guardian-body::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 25px;
+
+    width: 28px;
+    height: 28px;
+
+    transform:
+        translateX(-50%)
+        rotate(45deg);
+
+    background:
+        linear-gradient(
+            135deg,
+            #8bedff,
+            #566eff
         );
 
     box-shadow:
-        0 14px 35px
-        rgba(72, 161, 255, 0.3);
+        0 0 25px
+        rgba(95, 170, 255, 0.7);
+}
+
+.guardian-crystal {
+    position: absolute;
+
+    width: 27px;
+    height: 38px;
+
+    transform:
+        rotate(45deg);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.35);
+
+    z-index: 7;
+
+    animation:
+        guardianCrystalFloat
+        3.3s
+        ease-in-out
+        infinite;
+}
+
+.crystal-fire {
+    left: 47px;
+    top: 58px;
+
+    background: var(--fire);
+
+    box-shadow:
+        0 0 20px
+        rgba(255, 101, 77, 0.65);
+}
+
+.crystal-ice {
+    right: 47px;
+    top: 58px;
+
+    background: var(--ice);
+
+    box-shadow:
+        0 0 20px
+        rgba(85, 216, 255, 0.65);
+
+    animation-delay: -0.6s;
+}
+
+.crystal-lightning {
+    right: 58px;
+    bottom: 47px;
+
+    background: var(--lightning);
+
+    box-shadow:
+        0 0 20px
+        rgba(255, 216, 79, 0.65);
+
+    animation-delay: -1.2s;
+}
+
+.crystal-nature {
+    left: 50%;
+    bottom: 28px;
+
+    background: var(--nature);
+
+    box-shadow:
+        0 0 20px
+        rgba(103, 229, 110, 0.65);
+
+    animation-delay: -1.8s;
+}
+
+.crystal-shadow {
+    left: 58px;
+    bottom: 47px;
+
+    background: var(--shadow);
+
+    box-shadow:
+        0 0 20px
+        rgba(162, 120, 255, 0.65);
+
+    animation-delay: -2.4s;
+}
+
+
+/* =========================
+   ADD-ON CONTENT
+========================= */
+
+.addon-content {
+    padding: 28px;
+}
+
+.addon-content h3 {
+    color: var(--text);
+
+    font-size: 1.55rem;
+}
+
+.addon-description {
+    margin-top: 15px;
+
+    color: var(--text-2);
+
+    line-height: 1.8;
+}
+
+.addon-elements {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 22px;
+}
+
+.addon-elements span {
+    padding:
+        6px
+        10px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    color: var(--text-2);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 999px;
+
+    font-size: 0.7rem;
+    font-weight: 750;
+}
+
+.addon-details {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-top: 24px;
+}
+
+.addon-detail {
+    padding:
+        16px
+        10px;
+
+    background:
+        var(--background-3);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    text-align: center;
+}
+
+.addon-detail strong {
+    display: block;
+
+    color: var(--green);
+
+    font-size: 1.5rem;
+    font-weight: 950;
+}
+
+.addon-detail span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 0.65rem;
+    font-weight: 750;
+
+    text-transform: uppercase;
+}
+
+.addon-features {
+    margin-top: 25px;
+
+    padding:
+        20px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 14px;
+}
+
+.addon-features h4,
+.guardian-abilities h4 {
+    margin-bottom: 13px;
+
+    font-size: 0.82rem;
+    font-weight: 850;
+
+    letter-spacing: 0.06em;
+
+    text-transform: uppercase;
+}
+
+.addon-features ul {
+    display: grid;
+
+    gap: 10px;
+}
+
+.addon-features li {
+    position: relative;
+
+    padding-left: 21px;
+
+    color: var(--text-2);
+
+    font-size: 0.82rem;
+
+    line-height: 1.55;
+}
+
+.addon-features li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+
+    color: var(--green);
+
+    font-weight: 900;
+}
+
+
+/* =========================
+   GUARDIAN ABILITIES
+========================= */
+
+.guardian-abilities {
+    margin-top: 18px;
+
+    padding:
+        20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(66, 165, 255, 0.05),
+            rgba(155, 114, 255, 0.05)
+        );
+
+    border:
+        1px solid
+        rgba(109, 161, 255, 0.15);
+
+    border-radius: 14px;
+}
+
+.guardian-abilities > div {
+    display: grid;
+
+    gap: 8px;
+}
+
+.guardian-abilities span {
+    color: var(--text-2);
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================
+   ADD-ON META
+========================= */
+
+.addon-meta {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+
+    margin-top: 23px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid var(--border);
+}
+
+.addon-meta > span {
+    display: flex;
+    flex-direction: column;
+
+    color: var(--text);
+
+    font-size: 0.74rem;
+    font-weight: 750;
+}
+
+.addon-meta small {
+    margin-bottom: 3px;
+
+    color: var(--muted);
+
+    font-size: 0.56rem;
+    font-weight: 850;
+
+    letter-spacing: 0.08em;
+}
+
+/* =========================
+   DOWNLOAD BUTTONS
+========================= */
+
+.addon-buttons {
+    margin-top: 23px;
+}
+
+.download-button {
+    width: 100%;
+
+    min-height: 52px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--green),
+            #52d73a
+        );
+
+    color: #061105;
+
+    border-radius: 11px;
+
+    font-size: 0.82rem;
+    font-weight: 900;
+
+    box-shadow:
+        0 13px 30px
+        rgba(124, 255, 79, 0.13);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        filter var(--transition);
+}
+
+.download-button span {
+    font-size: 1.15rem;
+}
+
+.download-button:hover {
+    transform:
+        translateY(-3px);
+
+    filter:
+        brightness(1.08);
+
+    box-shadow:
+        0 17px 38px
+        rgba(124, 255, 79, 0.22);
+}
+
+.guardians-download {
+    background:
+        linear-gradient(
+            135deg,
+            #57dfff,
+            #7078ff
+        );
+
+    color: #07111f;
+
+    box-shadow:
+        0 13px 30px
+        rgba(73, 152, 255, 0.15);
+}
+
+.guardians-download:hover {
+    box-shadow:
+        0 17px 38px
+        rgba(73, 152, 255, 0.25);
+}
+
+
+/* =========================
+   INSTALLATION
+========================= */
+
+.addon-install {
+    max-width: 900px;
+
+    display: grid;
+
+    grid-template-columns:
+        75px
+        1fr;
+
+    align-items: center;
+
+    gap: 23px;
+
+    margin:
+        50px
+        auto
+        0;
+
+    padding:
+        27px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 255, 79, 0.055),
+            rgba(66, 165, 255, 0.045)
+        );
+
+    border:
+        1px solid
+        rgba(124, 255, 79, 0.17);
+
+    border-radius: 18px;
+}
+
+.install-icon {
+    width: 64px;
+    height: 64px;
+
+    display: grid;
+    place-items: center;
+
+    background:
+        rgba(124, 255, 79, 0.1);
+
+    color: var(--green);
+
+    border:
+        1px solid
+        rgba(124, 255, 79, 0.23);
+
+    border-radius: 15px;
+
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+
+.addon-install h3 {
+    font-size: 1.25rem;
+}
+
+.addon-install p {
+    margin-top: 7px;
+
+    color: var(--text-2);
+
+    line-height: 1.75;
+}
+
+.addon-install p strong {
+    color: var(--text);
+}
+
+.addon-disclaimer {
+    max-width: 850px;
+
+    margin:
+        24px
+        auto
+        0;
+
+    color: var(--muted);
+
+    font-size: 0.72rem;
+
+    text-align: center;
 }
 
 
@@ -2379,7 +3262,7 @@ body.light-theme .orbit-tag {
 
     border-radius: var(--radius);
 
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-box);
 }
 
 .code-header {
@@ -2799,7 +3682,7 @@ body.light-theme .orbit-tag {
 
     border-radius: 28px;
 
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-box);
 }
 
 .vision-content > p {
@@ -2874,34 +3757,6 @@ body.light-theme .orbit-tag {
         infinite;
 }
 
-.vision-ring::before,
-.vision-ring::after {
-    content: "";
-
-    position: absolute;
-
-    width: 9px;
-    height: 9px;
-
-    background: var(--green);
-
-    border-radius: 50%;
-
-    box-shadow:
-        0 0 15px
-        rgba(124, 255, 79, 0.6);
-}
-
-.vision-ring::before {
-    top: 25px;
-    left: 40px;
-}
-
-.vision-ring::after {
-    right: 22px;
-    bottom: 55px;
-}
-
 .vision-logo {
     width: 115px;
     height: 115px;
@@ -2920,10 +3775,6 @@ body.light-theme .orbit-tag {
 
     transform:
         rotate(45deg);
-
-    box-shadow:
-        0 0 60px
-        rgba(124, 255, 79, 0.18);
 
     animation:
         visionFloat
@@ -3078,21 +3929,14 @@ body.light-theme .footer {
     transition:
         transform var(--transition),
         background var(--transition),
-        color var(--transition),
-        border-color var(--transition);
+        color var(--transition);
 }
 
 .social-button:hover {
     transform:
         translateY(-2px);
 
-    background:
-        rgba(124, 255, 79, 0.06);
-
     color: var(--green);
-
-    border-color:
-        var(--green-border);
 }
 
 #socialMessage {
@@ -3160,6 +4004,8 @@ body.light-theme .footer {
         opacity var(--transition),
         visibility var(--transition),
         transform var(--transition);
+
+    z-index: 500;
 }
 
 .back-to-top.show {
@@ -3347,31 +4193,6 @@ body.light-theme .footer {
 }
 
 
-/* Temple glowing background */
-
-@keyframes templeLightPulse {
-
-    0%,
-    100% {
-        opacity: 0.65;
-
-        transform:
-            translateX(-50%)
-            scale(1);
-    }
-
-    50% {
-        opacity: 1;
-
-        transform:
-            translateX(-50%)
-            scale(1.14);
-    }
-}
-
-
-/* Ancient crystal movement */
-
 @keyframes templeCrystalFloat {
 
     0%,
@@ -3380,9 +4201,6 @@ body.light-theme .footer {
             translateX(-50%)
             translateY(0)
             rotate(45deg);
-
-        filter:
-            brightness(1);
     }
 
     50% {
@@ -3390,9 +4208,6 @@ body.light-theme .footer {
             translateX(-50%)
             translateY(-8px)
             rotate(45deg);
-
-        filter:
-            brightness(1.25);
     }
 }
 
@@ -3476,11 +4291,106 @@ body.light-theme .footer {
 }
 
 
+@keyframes addonCenterFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(45deg);
+    }
+
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(45deg);
+    }
+}
+
+
+@keyframes elementalOrbFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-9px)
+            rotate(6deg);
+    }
+}
+
+
+@keyframes guardianFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-9px);
+    }
+}
+
+
+@keyframes guardianAura {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+        opacity: 0.5;
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.12);
+
+        opacity: 1;
+    }
+}
+
+
+@keyframes guardianCrystalFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(45deg);
+    }
+
+    50% {
+        transform:
+            translateY(-8px)
+            rotate(45deg);
+    }
+}
+
+
 /* =========================================================
    TABLET
 ========================================================= */
 
 @media (max-width: 1000px) {
+
+    .nav-link {
+        padding:
+            9px
+            8px;
+
+        font-size: 0.78rem;
+    }
 
     .hero-container {
         grid-template-columns: 1fr;
@@ -3515,6 +4425,14 @@ body.light-theme .footer {
 
     .games-grid {
         grid-template-columns: 1fr;
+    }
+
+    .addons-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 720px;
+
+        margin: auto;
     }
 
     .about-grid {
@@ -3613,6 +4531,8 @@ body.light-theme .footer {
         padding:
             13px
             15px;
+
+        font-size: 0.9rem;
     }
 
     .nav-link::after {
@@ -3662,6 +4582,7 @@ body.light-theme .footer {
     }
 
     .games-section,
+    .addons-section,
     .technology-section,
     .journey-section,
     .coming-section,
@@ -3675,19 +4596,9 @@ body.light-theme .footer {
         height: 220px;
     }
 
-    /* Temple artwork mobile */
-
     .temple-pillar {
         height: 145px;
         width: 52px;
-    }
-
-    .temple-pillar::before {
-        width: 68px;
-    }
-
-    .temple-pillar::after {
-        width: 70px;
     }
 
     .temple-pillar-left {
@@ -3706,6 +4617,63 @@ body.light-theme .footer {
     .temple-crystal {
         width: 32px;
         height: 49px;
+    }
+
+    .addon-art {
+        height: 270px;
+    }
+
+    .addon-content {
+        padding: 23px;
+    }
+
+    .element-orb {
+        width: 46px;
+        height: 46px;
+
+        border-radius: 13px;
+    }
+
+    .fire-orb {
+        left: 45px;
+    }
+
+    .ice-orb {
+        right: 45px;
+    }
+
+    .lightning-orb {
+        right: 25px;
+    }
+
+    .nature-orb {
+        right: 70px;
+    }
+
+    .shadow-orb {
+        left: 70px;
+    }
+
+    .addon-center-symbol {
+        width: 95px;
+        height: 95px;
+
+        font-size: 2.9rem;
+    }
+
+    .guardian-symbol {
+        transform:
+            scale(0.88);
+    }
+
+    .addon-install {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .install-icon {
+        margin: auto;
     }
 
     .stats-grid {
@@ -3810,9 +4778,6 @@ body.light-theme .footer {
         width: 100%;
     }
 
-
-    /* Temple small phone */
-
     .temple-pillar-left {
         left: 35px;
     }
@@ -3825,11 +4790,133 @@ body.light-theme .footer {
         width: 110px;
     }
 
-    .temple-sun {
-        width: 64px;
-        height: 64px;
+    .addon-art {
+        height: 240px;
     }
 
+    .addon-number {
+        left: 15px;
+        bottom: 14px;
+
+        font-size: 0.59rem;
+    }
+
+    .addon-content {
+        padding: 19px;
+    }
+
+    .addon-content h3 {
+        font-size: 1.35rem;
+    }
+
+    .addon-elements {
+        gap: 6px;
+    }
+
+    .addon-elements span {
+        font-size: 0.62rem;
+    }
+
+    .addon-details {
+        grid-template-columns: 1fr;
+    }
+
+    .addon-detail {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        text-align: left;
+
+        padding:
+            12px
+            15px;
+    }
+
+    .addon-detail strong {
+        font-size: 1.25rem;
+    }
+
+    .addon-detail span {
+        margin: 0;
+    }
+
+    .addon-meta {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .addon-meta > span {
+        padding-bottom: 9px;
+
+        border-bottom:
+            1px solid var(--border);
+    }
+
+    .download-button {
+        min-height: 50px;
+    }
+
+    .addon-center-symbol {
+        width: 80px;
+        height: 80px;
+
+        font-size: 2.4rem;
+    }
+
+    .element-orb {
+        width: 40px;
+        height: 40px;
+
+        font-size: 0.74rem;
+    }
+
+    .fire-orb {
+        top: 35px;
+        left: 28px;
+    }
+
+    .ice-orb {
+        top: 35px;
+        right: 28px;
+    }
+
+    .lightning-orb {
+        top: 105px;
+        right: 18px;
+    }
+
+    .nature-orb {
+        bottom: 35px;
+        right: 58px;
+    }
+
+    .shadow-orb {
+        bottom: 35px;
+        left: 58px;
+    }
+
+    .guardian-symbol {
+        transform:
+            scale(0.76);
+    }
+
+    .crystal-fire {
+        left: 28px;
+    }
+
+    .crystal-ice {
+        right: 28px;
+    }
+
+    .crystal-lightning {
+        right: 35px;
+    }
+
+    .crystal-shadow {
+        left: 35px;
+    }
 
     .timeline-item {
         grid-template-columns:
