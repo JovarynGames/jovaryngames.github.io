@@ -1,18 +1,20 @@
 /* =========================================================
    JOVARYN GAMES
-   Official Website JavaScript
+   WEBSITE VERSION 2.0
 ========================================================= */
 
 "use strict";
 
 
-/* =========================
+/* =========================================================
    ELEMENTS
-========================= */
+========================================================= */
 
-const loader = document.getElementById("loader");
+const loader =
+    document.getElementById("loader");
 
-const header = document.getElementById("header");
+const header =
+    document.getElementById("header");
 
 const navLinksContainer =
     document.getElementById("navLinks");
@@ -38,30 +40,39 @@ const backToTop =
 const currentYear =
     document.getElementById("currentYear");
 
-const socialMessage =
-    document.getElementById("socialMessage");
+const lastUpdated =
+    document.getElementById("lastUpdated");
+
+const siteToast =
+    document.getElementById("siteToast");
 
 
-/* =========================
+/* =========================================================
    LOADER
-========================= */
+========================================================= */
 
-window.addEventListener("load", () => {
+window.addEventListener(
+    "load",
+    () => {
 
-    setTimeout(() => {
+        window.setTimeout(
+            () => {
 
-        if (loader) {
-            loader.classList.add("hidden");
-        }
+                if (loader) {
+                    loader.classList.add("hidden");
+                }
 
-    }, 450);
+            },
+            350
+        );
 
-});
+    }
+);
 
 
-/* =========================
-   CURRENT YEAR
-========================= */
+/* =========================================================
+   YEAR
+========================================================= */
 
 if (currentYear) {
 
@@ -71,12 +82,50 @@ if (currentYear) {
 }
 
 
-/* =========================
+/* =========================================================
+   LAST UPDATED
+========================================================= */
+
+if (lastUpdated) {
+
+    const modified =
+        new Date(document.lastModified);
+
+
+    if (
+        !Number.isNaN(
+            modified.getTime()
+        )
+    ) {
+
+        lastUpdated.textContent =
+            modified.toLocaleDateString(
+                undefined,
+                {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric"
+                }
+            );
+
+    } else {
+
+        lastUpdated.textContent =
+            "2026";
+
+    }
+
+}
+
+
+/* =========================================================
    THEME
-========================= */
+========================================================= */
 
 const savedTheme =
-    localStorage.getItem("jovaryn-theme");
+    localStorage.getItem(
+        "jovaryn-theme"
+    );
 
 
 if (savedTheme === "light") {
@@ -99,7 +148,9 @@ function updateThemeIcon() {
     if (themeIcon) {
 
         themeIcon.textContent =
-            lightMode ? "☾" : "☀";
+            lightMode
+                ? "☾"
+                : "☀";
 
     }
 
@@ -128,7 +179,9 @@ if (themeToggle) {
 
             localStorage.setItem(
                 "jovaryn-theme",
-                lightMode ? "light" : "dark"
+                lightMode
+                    ? "light"
+                    : "dark"
             );
 
 
@@ -140,13 +193,16 @@ if (themeToggle) {
 }
 
 
-/* =========================
+/* =========================================================
    MOBILE MENU
-========================= */
+========================================================= */
 
 function closeMenu() {
 
-    if (!navLinksContainer || !menuToggle) {
+    if (
+        !navLinksContainer ||
+        !menuToggle
+    ) {
         return;
     }
 
@@ -171,16 +227,19 @@ function closeMenu() {
 }
 
 
-if (menuToggle && navLinksContainer) {
+if (
+    menuToggle &&
+    navLinksContainer
+) {
 
     menuToggle.addEventListener(
         "click",
         () => {
 
             const opened =
-                navLinksContainer.classList.toggle(
-                    "open"
-                );
+                navLinksContainer
+                    .classList
+                    .toggle("open");
 
 
             menuToggle.classList.toggle(
@@ -191,7 +250,9 @@ if (menuToggle && navLinksContainer) {
 
             menuToggle.setAttribute(
                 "aria-expanded",
-                opened ? "true" : "false"
+                opened
+                    ? "true"
+                    : "false"
             );
 
 
@@ -206,71 +267,154 @@ if (menuToggle && navLinksContainer) {
 }
 
 
-navLinks.forEach(link => {
-
-    link.addEventListener(
-        "click",
-        closeMenu
-    );
-
-});
-
-
-/* =========================
-   SMOOTH INTERNAL LINKS
-========================= */
-
-document
-    .querySelectorAll('a[href^="#"]')
-    .forEach(link => {
+navLinks.forEach(
+    link => {
 
         link.addEventListener(
             "click",
-            event => {
-
-                const targetId =
-                    link.getAttribute("href");
-
-
-                if (!targetId ||
-                    targetId === "#") {
-
-                    return;
-
-                }
-
-
-                const target =
-                    document.querySelector(
-                        targetId
-                    );
-
-
-                if (!target) {
-                    return;
-                }
-
-
-                event.preventDefault();
-
-
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
-
-                closeMenu();
-
-            }
+            closeMenu
         );
 
-    });
+    }
+);
 
 
-/* =========================
-   HEADER / PROGRESS
-========================= */
+/* =========================================================
+   INTERNAL LINKS
+========================================================= */
+
+document
+    .querySelectorAll(
+        'a[href^="#"]:not(.placeholder-link):not(.disabled-link)'
+    )
+    .forEach(
+        link => {
+
+            link.addEventListener(
+                "click",
+                event => {
+
+                    const targetId =
+                        link.getAttribute(
+                            "href"
+                        );
+
+
+                    if (
+                        !targetId ||
+                        targetId === "#"
+                    ) {
+                        return;
+                    }
+
+
+                    const target =
+                        document.querySelector(
+                            targetId
+                        );
+
+
+                    if (!target) {
+                        return;
+                    }
+
+
+                    event.preventDefault();
+
+
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+
+                    closeMenu();
+
+                }
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+let toastTimeout;
+
+
+function showToast(message) {
+
+    if (!siteToast) {
+        return;
+    }
+
+
+    window.clearTimeout(
+        toastTimeout
+    );
+
+
+    siteToast.textContent =
+        message;
+
+
+    siteToast.classList.add(
+        "show"
+    );
+
+
+    toastTimeout =
+        window.setTimeout(
+            () => {
+
+                siteToast.classList.remove(
+                    "show"
+                );
+
+            },
+            2800
+        );
+
+}
+
+
+/* =========================================================
+   FUTURE / DISABLED LINKS
+========================================================= */
+
+document
+    .querySelectorAll(
+        ".placeholder-link, .disabled-link"
+    )
+    .forEach(
+        link => {
+
+            link.addEventListener(
+                "click",
+                event => {
+
+                    event.preventDefault();
+
+
+                    const message =
+                        link.dataset.message ||
+                        "This feature is planned for a future update.";
+
+
+                    showToast(message);
+
+                }
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   SCROLL HANDLER
+========================================================= */
 
 function handleScroll() {
 
@@ -300,15 +444,18 @@ function handleScroll() {
 
     if (scrollProgress) {
 
-        const documentHeight =
+        const totalHeight =
             document.documentElement
                 .scrollHeight -
             window.innerHeight;
 
 
         const percentage =
-            documentHeight > 0
-                ? (scrollTop / documentHeight) * 100
+            totalHeight > 0
+                ? (
+                    scrollTop /
+                    totalHeight
+                ) * 100
                 : 0;
 
 
@@ -323,16 +470,18 @@ function handleScroll() {
 window.addEventListener(
     "scroll",
     handleScroll,
-    { passive: true }
+    {
+        passive: true
+    }
 );
 
 
 handleScroll();
 
 
-/* =========================
+/* =========================================================
    BACK TO TOP
-========================= */
+========================================================= */
 
 if (backToTop) {
 
@@ -351,9 +500,9 @@ if (backToTop) {
 }
 
 
-/* =========================
+/* =========================================================
    ACTIVE NAVIGATION
-========================= */
+========================================================= */
 
 const pageSections =
     document.querySelectorAll(
@@ -367,36 +516,45 @@ function updateActiveNavigation() {
         "home";
 
 
-    pageSections.forEach(section => {
+    pageSections.forEach(
+        section => {
 
-        const sectionTop =
-            section.offsetTop - 150;
+            const sectionTop =
+                section.offsetTop -
+                150;
 
 
-        if (
-            window.scrollY >= sectionTop
-        ) {
+            if (
+                window.scrollY >=
+                sectionTop
+            ) {
 
-            currentSection =
-                section.id;
+                currentSection =
+                    section.id;
+
+            }
 
         }
-
-    });
-
-
-    navLinks.forEach(link => {
-
-        const href =
-            link.getAttribute("href");
+    );
 
 
-        link.classList.toggle(
-            "active",
-            href === `#${currentSection}`
-        );
+    navLinks.forEach(
+        link => {
 
-    });
+            const href =
+                link.getAttribute(
+                    "href"
+                );
+
+
+            link.classList.toggle(
+                "active",
+                href ===
+                    `#${currentSection}`
+            );
+
+        }
+    );
 
 }
 
@@ -404,16 +562,18 @@ function updateActiveNavigation() {
 window.addEventListener(
     "scroll",
     updateActiveNavigation,
-    { passive: true }
+    {
+        passive: true
+    }
 );
 
 
 updateActiveNavigation();
 
 
-/* =========================
+/* =========================================================
    REVEAL ANIMATIONS
-========================= */
+========================================================= */
 
 const revealElements =
     document.querySelectorAll(
@@ -421,7 +581,25 @@ const revealElements =
     );
 
 
-if (
+const reducedMotion =
+    window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+
+if (reducedMotion) {
+
+    revealElements.forEach(
+        element => {
+
+            element.classList.add(
+                "visible"
+            );
+
+        }
+    );
+
+} else if (
     "IntersectionObserver" in window
 ) {
 
@@ -439,7 +617,9 @@ if (
 
                             entry.target
                                 .classList
-                                .add("visible");
+                                .add(
+                                    "visible"
+                                );
 
 
                             revealObserver
@@ -455,7 +635,9 @@ if (
             },
 
             {
-                threshold: 0.12
+                threshold: 0.1,
+                rootMargin:
+                    "0px 0px -30px 0px"
             }
 
         );
@@ -486,9 +668,9 @@ if (
 }
 
 
-/* =========================
+/* =========================================================
    COUNTERS
-========================= */
+========================================================= */
 
 const counters =
     document.querySelectorAll(
@@ -507,45 +689,59 @@ function animateCounter(counter) {
     if (
         !Number.isFinite(target)
     ) {
+        return;
+    }
+
+
+    if (reducedMotion) {
+
+        counter.textContent =
+            target;
 
         return;
 
     }
 
 
-    const duration = 1200;
+    const duration =
+        1200;
 
-    const startTime =
+    const start =
         performance.now();
 
 
-    function updateCounter(time) {
+    function update(time) {
 
         const elapsed =
-            time - startTime;
+            time - start;
 
 
         const progress =
             Math.min(
-                elapsed / duration,
+                elapsed /
+                duration,
                 1
             );
 
 
-        const value =
-            Math.floor(
-                progress * target
+        const eased =
+            1 -
+            Math.pow(
+                1 - progress,
+                3
             );
 
 
         counter.textContent =
-            value;
+            Math.floor(
+                eased * target
+            );
 
 
         if (progress < 1) {
 
             requestAnimationFrame(
-                updateCounter
+                update
             );
 
         } else {
@@ -559,7 +755,7 @@ function animateCounter(counter) {
 
 
     requestAnimationFrame(
-        updateCounter
+        update
     );
 
 }
@@ -599,7 +795,7 @@ if (
             },
 
             {
-                threshold: 0.5
+                threshold: 0.45
             }
 
         );
@@ -624,15 +820,9 @@ if (
 }
 
 
-/* =========================
-   CARD MOUSE EFFECT
-========================= */
-
-const interactiveCards =
-    document.querySelectorAll(
-        ".game-card, .addon-card, .tech-card"
-    );
-
+/* =========================================================
+   LIGHT CARD TILT
+========================================================= */
 
 const finePointer =
     window.matchMedia(
@@ -640,9 +830,18 @@ const finePointer =
     );
 
 
-if (finePointer.matches) {
+const tiltCards =
+    document.querySelectorAll(
+        ".learning-card, .official-project-card"
+    );
 
-    interactiveCards.forEach(
+
+if (
+    finePointer.matches &&
+    !reducedMotion
+) {
+
+    tiltCards.forEach(
         card => {
 
             card.addEventListener(
@@ -665,16 +864,18 @@ if (finePointer.matches) {
 
                     const rotateY =
                         (
-                            (x / rect.width) -
+                            x /
+                            rect.width -
                             0.5
-                        ) * 2;
+                        ) * 1.2;
 
 
                     const rotateX =
                         (
                             0.5 -
-                            (y / rect.height)
-                        ) * 2;
+                            y /
+                            rect.height
+                        ) * 1.2;
 
 
                     card.style.transform =
@@ -702,59 +903,17 @@ if (finePointer.matches) {
 }
 
 
-/* =========================
-   SOCIAL PLACEHOLDERS
-========================= */
+/* =========================================================
+   ESCAPE KEY CLOSES MOBILE MENU
+========================================================= */
 
-document
-    .querySelectorAll(
-        ".social-button"
-    )
-    .forEach(button => {
-
-        button.addEventListener(
-            "click",
-            () => {
-
-                const service =
-                    button.dataset.name ||
-                    "Social";
-
-
-                if (socialMessage) {
-
-                    socialMessage.textContent =
-                        `${service} link coming later.`;
-
-
-                    setTimeout(
-                        () => {
-
-                            socialMessage.textContent =
-                                "";
-
-                        },
-                        2500
-                    );
-
-                }
-
-            }
-        );
-
-    });
-
-
-/* =========================
-   RESIZE SAFETY
-========================= */
-
-window.addEventListener(
-    "resize",
-    () => {
+document.addEventListener(
+    "keydown",
+    event => {
 
         if (
-            window.innerWidth > 760
+            event.key ===
+            "Escape"
         ) {
 
             closeMenu();
@@ -765,14 +924,39 @@ window.addEventListener(
 );
 
 
-/* =========================
+/* =========================================================
+   RESIZE SAFETY
+========================================================= */
+
+window.addEventListener(
+    "resize",
+    () => {
+
+        if (
+            window.innerWidth >
+            760
+        ) {
+
+            closeMenu();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
    CONSOLE
-========================= */
+========================================================= */
 
 console.log(
     "JOVARYN GAMES"
 );
 
 console.log(
-    "Version 1.0 — Create. Play. Go Beyond."
+    "Website Version 2.0"
+);
+
+console.log(
+    "Create. Play. Go Beyond."
 );
