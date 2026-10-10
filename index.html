@@ -1,161 +1,70 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>Jovaryn Games | Project Polaris RC1</title>
 
-    <meta
-        name="description"
-        content="Jovaryn Games is an independent game development studio creating browser games, Minecraft Bedrock add-ons and future original games."
-    >
-
+    <meta name="description" content="Jovaryn Games is an independent game development studio creating original games, interactive experiences and Minecraft Bedrock projects. Explore Project Polaris Release Candidate 1.">
     <meta name="author" content="Jovaryn Games">
     <meta name="theme-color" content="#070a0f">
 
-    <title>Jovaryn Games | Create. Play. Go Beyond.</title>
+    <link rel="canonical" href="https://jovaryngames.com/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jovaryn Games | Project Polaris RC1">
+    <meta property="og:description" content="Explore Project Polaris Release Candidate 1 and the official Jovaryn Games portfolio.">
+    <meta property="og:url" content="https://jovaryngames.com/">
+    <meta property="og:image" content="https://jovaryngames.com/assets/images/polaris/polaris-cover.png">
+    <meta property="og:image:alt" content="Project Polaris promotional cover artwork">
+
+    <meta name="twitter:card" content="summary_large_image">
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- =====================================================
-         LOADER
-    ====================================================== -->
-
+    <!-- LOADER -->
     <div class="loader" id="loader">
-
         <div class="loader-inner">
-
             <div class="loader-logo">
                 JOVARYN <span>GAMES</span>
             </div>
-
             <div class="loader-track">
                 <div class="loader-bar"></div>
             </div>
-
             <p>Loading Studio...</p>
-
         </div>
-
     </div>
 
+    <!-- SCROLL PROGRESS -->
+    <div class="scroll-progress" id="scrollProgress"></div>
 
-    <!-- =====================================================
-         SCROLL PROGRESS
-    ====================================================== -->
+    <!-- NOTIFICATIONS -->
+    <div class="site-toast" id="siteToast" role="status" aria-live="polite"></div>
 
-    <div
-        class="scroll-progress"
-        id="scrollProgress"
-    ></div>
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <nav class="navbar" aria-label="Main navigation">
 
-
-    <!-- =====================================================
-         TOAST
-    ====================================================== -->
-
-    <div
-        class="site-toast"
-        id="siteToast"
-        role="status"
-        aria-live="polite"
-    ></div>
-
-
-    <!-- =====================================================
-         HEADER
-    ====================================================== -->
-
-    <header
-        class="header"
-        id="header"
-    >
-
-        <nav
-            class="navbar"
-            aria-label="Main navigation"
-        >
-
-            <a
-                href="#home"
-                class="logo"
-                aria-label="Jovaryn Games home"
-            >
+            <a href="#home" class="logo" aria-label="Jovaryn Games home">
                 JOVARYN <span>GAMES</span>
             </a>
 
-
-            <ul
-                class="nav-links"
-                id="navLinks"
-            >
-
-                <li>
-                    <a
-                        href="#home"
-                        class="nav-link active"
-                    >
-                        Home
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        href="#games"
-                        class="nav-link"
-                    >
-                        Games
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        href="#addons"
-                        class="nav-link"
-                    >
-                        Add-ons
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        href="#learning"
-                        class="nav-link"
-                    >
-                        Learning
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        href="#releases"
-                        class="nav-link"
-                    >
-                        Releases
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        href="#about"
-                        class="nav-link"
-                    >
-                        About
-                    </a>
-                </li>
-
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#polaris" class="nav-link">Polaris</a></li>
+                <li><a href="#games" class="nav-link">Games</a></li>
+                <li><a href="#addons" class="nav-link">Add-ons</a></li>
+                <li><a href="#learning" class="nav-link">Learning</a></li>
+                <li><a href="#releases" class="nav-link">Releases</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
             </ul>
 
-
             <div class="nav-actions">
-
                 <button
                     class="theme-toggle"
                     id="themeToggle"
@@ -164,7 +73,6 @@
                 >
                     <span id="themeIcon">☀</span>
                 </button>
-
 
                 <button
                     class="menu-toggle"
@@ -178,331 +86,225 @@
                     <span></span>
                     <span></span>
                 </button>
-
             </div>
-
         </nav>
-
     </header>
-
 
     <main>
 
-        <!-- =================================================
+        <!-- ==========================================
              HERO
-        ================================================== -->
-
-        <section
-            class="hero section"
-            id="home"
-        >
-
+        ========================================== -->
+        <section class="hero section" id="home">
             <div class="hero-background">
-
                 <div class="grid-background"></div>
-
                 <div class="glow glow-one"></div>
                 <div class="glow glow-two"></div>
-
                 <div class="pixel pixel-one"></div>
                 <div class="pixel pixel-two"></div>
                 <div class="pixel pixel-three"></div>
                 <div class="pixel pixel-four"></div>
-
             </div>
-
 
             <div class="hero-container">
 
                 <div class="hero-content reveal">
-
                     <div class="hero-badge">
-
                         <span></span>
-
                         Independent Game Development Studio
-
                     </div>
 
-
                     <h1>
-
                         JOVARYN
-
-                        <strong>
-                            GAMES
-                        </strong>
-
+                        <strong>GAMES</strong>
                     </h1>
 
-
                     <div class="tagline">
-
                         <span>Create.</span>
                         <span>Play.</span>
                         <span>Go Beyond.</span>
-
                     </div>
-
 
                     <p class="hero-description">
-
-                        Creating browser games, Minecraft Bedrock
-                        add-ons and future original game experiences.
-
+                        Creating original games, interactive experiences,
+                        browser games and Minecraft Bedrock projects.
                     </p>
 
-
                     <div class="hero-buttons">
-
-                        <a
-                            href="#latest"
-                            class="button primary-button"
-                        >
-                            Latest Release
-                            <span>→</span>
+                        <a href="#polaris" class="button primary-button">
+                            Explore Project Polaris <span>→</span>
                         </a>
 
-
-                        <a
-                            href="#games"
-                            class="button secondary-button"
-                        >
+                        <a href="#games" class="button secondary-button">
                             Explore Projects
                         </a>
-
                     </div>
-
 
                     <div class="hero-info">
-
                         <div>
-
-                            <small>
-                                WEBSITE
-                            </small>
-
-                            <strong>
-                                Version 2.0
-                            </strong>
-
+                            <small>WEBSITE</small>
+                            <strong>Version 2.1</strong>
                         </div>
-
 
                         <span class="info-line"></span>
 
-
                         <div>
-
-                            <small>
-                                OFFICIAL RELEASES
-                            </small>
-
-                            <strong>
-                                4
-                            </strong>
-
+                            <small>OFFICIAL RELEASES</small>
+                            <strong>5</strong>
                         </div>
-
 
                         <span class="info-line"></span>
 
-
                         <div>
-
-                            <small>
-                                BEDROCK ADD-ONS
-                            </small>
-
-                            <strong>
-                                3
-                            </strong>
-
+                            <small>RELEASE CANDIDATES</small>
+                            <strong>1</strong>
                         </div>
-
                     </div>
-
                 </div>
 
-
                 <div class="hero-art reveal">
-
                     <div class="studio-orbit">
-
                         <div class="orbit ring-one"></div>
                         <div class="orbit ring-two"></div>
                         <div class="orbit ring-three"></div>
-
 
                         <div class="studio-core">
                             <span>J</span>
                         </div>
 
-
-                        <div class="orbit-tag tag-code">
-                            CODE
-                        </div>
-
-                        <div class="orbit-tag tag-create">
-                            CREATE
-                        </div>
-
-                        <div class="orbit-tag tag-play">
-                            PLAY
-                        </div>
-
+                        <div class="orbit-tag tag-code">CODE</div>
+                        <div class="orbit-tag tag-create">CREATE</div>
+                        <div class="orbit-tag tag-play">PLAY</div>
                     </div>
-
                 </div>
 
             </div>
-
         </section>
 
-
-        <!-- =================================================
-             LATEST RELEASE
-        ================================================== -->
-
-        <section
-            class="latest-section section"
-            id="latest"
-        >
-
+        <!-- ==========================================
+             PROJECT POLARIS
+        ========================================== -->
+        <section class="latest-section section" id="polaris">
             <div class="container">
 
                 <div class="section-heading reveal">
-
-                    <span class="section-label">
-                        ⭐ LATEST RELEASE
-                    </span>
-
-                    <h2>
-                        Elemental <span>Trials</span>
-                    </h2>
-
-                    <p>
-                        The newest Jovaryn Games Bedrock release combines
-                        elemental tools, Guardians, crystals and progression
-                        into one larger adventure.
-                    </p>
-
+                    <span class="section-label">⭐ FEATURED PROJECT</span>
+                    <h2>Project <span>Polaris</span></h2>
+                    <p>Jovaryn Games Release Candidate 1.</p>
                 </div>
 
+                <article class="latest-release-card polaris-feature reveal">
 
-                <article class="latest-release-card reveal">
+                    <div
+                        class="latest-art polaris-art"
+                        style="position:relative;overflow:hidden"
+                    >
+                        <img
+                            src="assets/images/polaris/polaris-cover.png"
+                            alt="Project Polaris promotional cover artwork"
+                            loading="lazy"
+                            decoding="async"
+                            style="
+                                position:absolute;
+                                inset:0;
+                                width:100%;
+                                height:100%;
+                                object-fit:cover;
+                                object-position:center;
+                            "
+                        >
 
-                    <div class="latest-art trials-cover">
+                        <div
+                            aria-hidden="true"
+                            style="
+                                position:absolute;
+                                inset:0;
+                                background:linear-gradient(
+                                    to bottom,
+                                    transparent 35%,
+                                    rgba(0,0,0,0.88) 100%
+                                );
+                                pointer-events:none;
+                            "
+                        ></div>
 
-                        <div class="latest-ring latest-ring-one"></div>
-                        <div class="latest-ring latest-ring-two"></div>
-
-
-                        <div class="latest-core">
-                            V
+                        <div class="polaris-media-label">
+                            <span>PROMOTIONAL ARTWORK</span>
+                            <strong>PROJECT POLARIS</strong>
                         </div>
-
-
-                        <div class="latest-element latest-fire">
-                            F
-                        </div>
-
-                        <div class="latest-element latest-ice">
-                            I
-                        </div>
-
-                        <div class="latest-element latest-lightning">
-                            L
-                        </div>
-
-                        <div class="latest-element latest-nature">
-                            N
-                        </div>
-
-                        <div class="latest-element latest-shadow">
-                            S
-                        </div>
-
-
-                        <span class="latest-art-label">
-                            ELEMENTAL TRIALS
-                        </span>
-
                     </div>
-
 
                     <div class="latest-content">
 
                         <div class="badges">
-
                             <span class="status released">
-                                Released
+                                Release Candidate 1
                             </span>
-
-                            <span class="version">
-                                Version 1.0
-                            </span>
-
+                            <span class="version">RC1</span>
                             <span class="difficulty advanced">
                                 Advanced
                             </span>
-
                         </div>
-
 
                         <span class="project-category">
-                            Minecraft Bedrock Add-on
+                            Minecraft Bedrock Adventure
                         </span>
 
-
-                        <h3>
-                            Elemental Trials
-                        </h3>
-
+                        <h3>Project Polaris</h3>
 
                         <p>
-
-                            Complete five elemental trials in sequence,
-                            fight powerful Guardians, collect elemental
-                            crystals and unlock the Elemental Master Sword.
-
+                            Project Polaris is the release-candidate
+                            evolution of The Elemental Realms.
+                            It focuses on a polished adventure experience
+                            built around exploration, elemental Guardians,
+                            progression, combat, custom systems and
+                            professional project organization.
                         </p>
 
+                        <div class="polaris-status-box">
+                            <div>
+                                <small>PROJECT STATUS</small>
+                                <strong>Release Candidate</strong>
+                            </div>
+
+                            <div>
+                                <small>FINAL RELEASE</small>
+                                <strong>Not Yet</strong>
+                            </div>
+                        </div>
+
+                        <div class="mentor-score-card">
+                            <span>MENTOR REVIEW</span>
+                            <strong>9.8 <small>/ 10</small></strong>
+                            <p>Release Candidate Approved</p>
+                        </div>
 
                         <div class="technology-badges">
-
                             <span>Minecraft Bedrock</span>
-                            <span>JSON</span>
                             <span>JavaScript</span>
+                            <span>JSON</span>
                             <span>Behavior Pack</span>
                             <span>Resource Pack</span>
-                            <span>Entities</span>
-
+                            <span>Custom Entities</span>
+                            <span>Animations</span>
+                            <span>Game Design</span>
                         </div>
-
-
-                        <div class="development-time">
-
-                            <small>
-                                DEVELOPMENT TIME
-                            </small>
-
-                            <strong>
-                                Not recorded
-                            </strong>
-
-                        </div>
-
 
                         <div class="latest-buttons">
-
                             <a
-                                href="#elemental-trials"
+                                href="project-polaris/"
                                 class="button primary-button"
                             >
                                 View Project
                             </a>
 
+                            <a
+                                href="#"
+                                class="button secondary-button placeholder-link"
+                                data-message="The Project Polaris trailer is not published yet."
+                            >
+                                Watch Trailer
+                            </a>
 
                             <a
                                 href="https://github.com/JovarynGames"
@@ -512,66 +314,49 @@
                             >
                                 GitHub
                             </a>
-
                         </div>
 
                     </div>
-
                 </article>
 
-            </div>
+                <div class="developer-note reveal">
+                    <span>DEVELOPER NOTE</span>
+                    <p>
+                        Project Polaris represents the biggest milestone
+                        in Jovaryn Games so far and marks the transition
+                        from learning-focused projects toward professional
+                        game development.
+                    </p>
+                </div>
 
+            </div>
         </section>
 
-
-        <!-- =================================================
-             FEATURED OFFICIAL GAME
-        ================================================== -->
-
-        <section
-            class="games-section section"
-            id="games"
-        >
-
+        <!-- ==========================================
+             TEMPLE OF TRIALS
+        ========================================== -->
+        <section class="games-section section" id="games">
             <div class="container">
 
                 <div class="section-heading reveal">
-
-                    <span class="section-label">
-                        OFFICIAL GAME
-                    </span>
-
-                    <h2>
-                        Featured <span>Game</span>
-                    </h2>
-
+                    <span class="section-label">OFFICIAL GAME</span>
+                    <h2>Flagship <span>Browser Game</span></h2>
                     <p>
-                        The flagship browser game of Jovaryn Games.
+                        The browser game that established the official
+                        Jovaryn Games portfolio.
                     </p>
-
                 </div>
-
 
                 <article class="project-card flagship-card reveal">
 
-                    <!-- COVER -->
-
                     <div class="project-cover temple-art">
-
                         <span class="flagship-badge">
-                            ⭐ Flagship Game
+                            ⭐ Flagship Browser Game
                         </span>
 
-
                         <div class="temple-sun"></div>
-
-                        <div
-                            class="temple-pillar temple-pillar-left"
-                        ></div>
-
-                        <div
-                            class="temple-pillar temple-pillar-right"
-                        ></div>
+                        <div class="temple-pillar temple-pillar-left"></div>
+                        <div class="temple-pillar temple-pillar-right"></div>
 
                         <div class="temple-door">
                             <div class="temple-crystal"></div>
@@ -579,121 +364,47 @@
 
                         <div class="temple-floor"></div>
 
-
                         <strong class="cover-title">
                             TEMPLE OF TRIALS
                         </strong>
-
                     </div>
 
-
-                    <!-- CONTENT -->
-
                     <div class="project-content">
-
                         <div class="badges">
-
-                            <span class="status released">
-                                Released
-                            </span>
-
-                            <span class="version">
-                                Version 1.0
-                            </span>
-
+                            <span class="status released">Released</span>
+                            <span class="version">Version 1.0</span>
                             <span class="difficulty advanced">
                                 Advanced
                             </span>
-
                         </div>
-
 
                         <span class="project-category">
                             Adventure / Puzzle Browser Game
                         </span>
 
-
-                        <h3>
-                            Temple of Trials
-                        </h3>
-
+                        <h3>Temple of Trials</h3>
 
                         <p>
-
                             Enter an ancient temple, complete dangerous
-                            trials, solve challenges, discover treasures
-                            and escape with the Ancient Crystal.
-
+                            trials, solve challenges, discover hidden
+                            treasures and escape with the Ancient Crystal.
                         </p>
 
-
                         <div class="technology-badges">
-
                             <span>HTML</span>
                             <span>CSS</span>
                             <span>JavaScript</span>
                             <span>Game Design</span>
                             <span>Responsive UI</span>
-
                         </div>
-
-
-                        <div class="development-time">
-
-                            <small>
-                                COMPLETED IN
-                            </small>
-
-                            <strong>
-                                Not recorded
-                            </strong>
-
-                        </div>
-
-
-                        <details class="gallery-details">
-
-                            <summary>
-                                Screenshot Gallery
-                            </summary>
-
-
-                            <div class="screenshot-grid">
-
-                                <div class="screenshot-placeholder">
-                                    <strong>Main Cover</strong>
-                                    <span>Screenshot coming later</span>
-                                </div>
-
-                                <div class="screenshot-placeholder">
-                                    <strong>Screenshot 1</strong>
-                                    <span>Screenshot coming later</span>
-                                </div>
-
-                                <div class="screenshot-placeholder">
-                                    <strong>Screenshot 2</strong>
-                                    <span>Screenshot coming later</span>
-                                </div>
-
-                                <div class="screenshot-placeholder">
-                                    <strong>Screenshot 3</strong>
-                                    <span>Screenshot coming later</span>
-                                </div>
-
-                            </div>
-
-                        </details>
-
 
                         <div class="project-actions">
-
                             <a
                                 href="https://jovaryngames.com/temple-of-trials/"
                                 class="project-button primary-project-button"
                             >
                                 Play Game
                             </a>
-
 
                             <a
                                 href="https://github.com/JovarynGames"
@@ -703,196 +414,73 @@
                             >
                                 GitHub
                             </a>
-
                         </div>
-
                     </div>
-
                 </article>
 
             </div>
-
         </section>
 
-
-        <!-- =================================================
-             MINECRAFT BEDROCK ADD-ONS
-        ================================================== -->
-
-        <section
-            class="addons-section section"
-            id="addons"
-        >
-
+        <!-- ==========================================
+             BEDROCK PROJECTS
+        ========================================== -->
+        <section class="addons-section section" id="addons">
             <div class="container">
 
                 <div class="section-heading reveal">
-
-                    <span class="section-label">
-                        OFFICIAL ADD-ONS
-                    </span>
-
-                    <h2>
-                        Minecraft Bedrock <span>Add-ons</span>
-                    </h2>
-
+                    <span class="section-label">MINECRAFT BEDROCK</span>
+                    <h2>Bedrock <span>Projects</span></h2>
                     <p>
-
-                        Original Jovaryn Games Bedrock projects featuring
-                        custom tools, entities, animations, progression
-                        systems and elemental gameplay.
-
+                        From the first elemental tools to complete
+                        Minecraft Bedrock adventures.
                     </p>
-
                 </div>
-
 
                 <div class="official-project-grid">
 
-
-                    <!-- =========================================
-                         ELEMENTAL TOOLS
-                    ========================================== -->
-
+                    <!-- ELEMENTAL TOOLS -->
                     <article
                         class="official-project-card reveal"
                         id="elemental-tools"
                     >
-
                         <div class="addon-project-art tools-art">
-
-                            <div class="element-orb fire-orb">
-                                F
-                            </div>
-
-                            <div class="element-orb ice-orb">
-                                I
-                            </div>
-
-                            <div class="element-orb lightning-orb">
-                                L
-                            </div>
-
-                            <div class="element-orb nature-orb">
-                                N
-                            </div>
-
-                            <div class="element-orb shadow-orb">
-                                S
-                            </div>
-
-
-                            <div class="tool-core">
-                                ⚔
-                            </div>
-
-
-                            <strong>
-                                ELEMENTAL TOOLS
-                            </strong>
-
+                            <div class="element-orb fire-orb">F</div>
+                            <div class="element-orb ice-orb">I</div>
+                            <div class="element-orb lightning-orb">L</div>
+                            <div class="element-orb nature-orb">N</div>
+                            <div class="element-orb shadow-orb">S</div>
+                            <div class="tool-core">⚔</div>
+                            <strong>ELEMENTAL TOOLS</strong>
                         </div>
 
-
                         <div class="official-project-content">
-
                             <div class="badges">
-
-                                <span class="status released">
-                                    Released
-                                </span>
-
-                                <span class="version">
-                                    Version 1.0
-                                </span>
-
-                                <span class="difficulty advanced">
-                                    Advanced
-                                </span>
-
+                                <span class="status released">Released</span>
+                                <span class="version">Version 1.0</span>
                             </div>
 
-
                             <span class="project-category">
-                                Minecraft Bedrock Add-on
+                                Release #002
                             </span>
 
-
-                            <h3>
-                                Elemental Tools
-                            </h3>
-
+                            <h3>Elemental Tools</h3>
 
                             <p>
-
-                                A collection of custom Fire, Ice,
-                                Lightning, Nature and Shadow tools with
-                                crafting recipes and elemental abilities.
-
+                                Custom Fire, Ice, Lightning, Nature and
+                                Shadow tools with crafting recipes and
+                                elemental abilities.
                             </p>
 
-
                             <div class="technology-badges">
-
                                 <span>Minecraft Bedrock</span>
                                 <span>JSON</span>
                                 <span>Behavior Pack</span>
                                 <span>Resource Pack</span>
                                 <span>Items</span>
                                 <span>Recipes</span>
-
                             </div>
-
-
-                            <div class="development-time">
-
-                                <small>
-                                    COMPLETED IN
-                                </small>
-
-                                <strong>
-                                    Not recorded
-                                </strong>
-
-                            </div>
-
-
-                            <details class="gallery-details">
-
-                                <summary>
-                                    Screenshot Gallery
-                                </summary>
-
-
-                                <div class="screenshot-grid">
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Main Cover</strong>
-                                        <span>Screenshot coming later</span>
-                                    </div>
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Screenshot 1</strong>
-                                        <span>Screenshot coming later</span>
-                                    </div>
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Screenshot 2</strong>
-                                        <span>Screenshot coming later</span>
-                                    </div>
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Screenshot 3</strong>
-                                        <span>Screenshot coming later</span>
-                                    </div>
-
-                                </div>
-
-                            </details>
-
 
                             <div class="addon-action-grid">
-
                                 <a
                                     href="https://github.com/JovarynGames"
                                     target="_blank"
@@ -902,16 +490,14 @@
                                     GitHub
                                 </a>
 
-
                                 <a
                                     href="#"
                                     class="mini-action disabled-link"
                                     aria-disabled="true"
-                                    data-message="Elemental Tools documentation is planned for a future update."
+                                    data-message="Elemental Tools documentation is coming later."
                                 >
                                     Documentation
                                 </a>
-
 
                                 <a
                                     href="downloads/Elemental-Tools-v1.0.mcaddon"
@@ -920,147 +506,58 @@
                                 >
                                     Download
                                 </a>
-
                             </div>
-
                         </div>
-
                     </article>
 
-
-                    <!-- =========================================
-                         ELEMENTAL GUARDIANS
-                    ========================================== -->
-
+                    <!-- ELEMENTAL GUARDIANS -->
                     <article
                         class="official-project-card reveal"
                         id="elemental-guardians"
                     >
-
                         <div class="addon-project-art guardians-art">
-
                             <div class="guardian-orbit guardian-orbit-one"></div>
                             <div class="guardian-orbit guardian-orbit-two"></div>
 
-
                             <div class="guardian-symbol">
-
                                 <div class="guardian-head">
                                     <span></span>
                                     <span></span>
                                 </div>
-
                                 <div class="guardian-body"></div>
-
                             </div>
 
-
-                            <strong>
-                                ELEMENTAL GUARDIANS
-                            </strong>
-
+                            <strong>ELEMENTAL GUARDIANS</strong>
                         </div>
 
-
                         <div class="official-project-content">
-
                             <div class="badges">
-
-                                <span class="status released">
-                                    Released
-                                </span>
-
-                                <span class="version">
-                                    Version 1.0
-                                </span>
-
-                                <span class="difficulty advanced">
-                                    Advanced
-                                </span>
-
+                                <span class="status released">Released</span>
+                                <span class="version">Version 1.0</span>
                             </div>
 
-
                             <span class="project-category">
-                                Minecraft Bedrock Add-on
+                                Release #003
                             </span>
 
-
-                            <h3>
-                                Elemental Guardians
-                            </h3>
-
+                            <h3>Elemental Guardians</h3>
 
                             <p>
-
                                 Five custom elemental Guardians with
-                                unique models, textures, attacks, spawn
-                                rules, animations and matching crystal drops.
-
+                                unique models, textures, attacks,
+                                animations, spawn rules and crystal drops.
                             </p>
 
-
-                            <div class="technology-badges guardian-tech">
-
+                            <div class="technology-badges">
                                 <span>Custom Mobs</span>
                                 <span>Spawn Rules</span>
                                 <span>Animations</span>
                                 <span>Behavior Pack</span>
                                 <span>Resource Pack</span>
                                 <span>Loot Tables</span>
-
                             </div>
-
-
-                            <div class="development-time">
-
-                                <small>
-                                    COMPLETED IN
-                                </small>
-
-                                <strong>
-                                    Not recorded
-                                </strong>
-
-                            </div>
-
-
-                            <details class="gallery-details">
-
-                                <summary>
-                                    Screenshot Gallery
-                                </summary>
-
-
-                                <div class="screenshot-grid">
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Main Cover</strong>
-                                        <span>Screenshot coming later</span>
-                                    </div>
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Screenshot 1</strong>
-                                        <span>Screenshot coming later</span>
-                                    </div>
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Screenshot 2</strong>
-                                        <span>Screenshot coming later</span>
-                                    </div>
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Screenshot 3</strong>
-                                        <span>Screenshot coming later</span>
-                                    </div>
-
-                                </div>
-
-                            </details>
-
 
                             <div class="addon-action-grid">
-
                                 <a
                                     href="https://github.com/JovarynGames"
                                     target="_blank"
@@ -1070,16 +567,14 @@
                                     GitHub
                                 </a>
 
-
                                 <a
                                     href="#"
                                     class="mini-action disabled-link"
                                     aria-disabled="true"
-                                    data-message="Elemental Guardians documentation is planned for a future update."
+                                    data-message="Elemental Guardians documentation is coming later."
                                 >
                                     Documentation
                                 </a>
-
 
                                 <a
                                     href="downloads/Elemental-Guardians-v1.0.mcaddon"
@@ -1088,175 +583,142 @@
                                 >
                                     Download
                                 </a>
-
                             </div>
-
                         </div>
-
                     </article>
 
-
-                    <!-- =========================================
-                         ELEMENTAL TRIALS
-                    ========================================== -->
-
+                    <!-- ELEMENTAL TRIALS -->
                     <article
                         class="official-project-card reveal"
                         id="elemental-trials"
                     >
-
                         <div class="addon-project-art trials-art">
-
                             <div class="trial-ring trial-ring-one"></div>
                             <div class="trial-ring trial-ring-two"></div>
 
+                            <div class="trial-core">V</div>
 
-                            <div class="trial-core">
-                                V
-                            </div>
+                            <div class="trial-node node-fire">F</div>
+                            <div class="trial-node node-ice">I</div>
+                            <div class="trial-node node-lightning">L</div>
+                            <div class="trial-node node-nature">N</div>
+                            <div class="trial-node node-shadow">S</div>
 
-
-                            <div class="trial-node node-fire">
-                                F
-                            </div>
-
-                            <div class="trial-node node-ice">
-                                I
-                            </div>
-
-                            <div class="trial-node node-lightning">
-                                L
-                            </div>
-
-                            <div class="trial-node node-nature">
-                                N
-                            </div>
-
-                            <div class="trial-node node-shadow">
-                                S
-                            </div>
-
-
-                            <strong>
-                                ELEMENTAL TRIALS
-                            </strong>
-
+                            <strong>ELEMENTAL TRIALS</strong>
                         </div>
 
-
                         <div class="official-project-content">
-
                             <div class="badges">
-
-                                <span class="status released">
-                                    Released
-                                </span>
-
-                                <span class="version">
-                                    Version 1.0
-                                </span>
-
-                                <span class="difficulty advanced">
-                                    Advanced
-                                </span>
-
+                                <span class="status released">Released</span>
+                                <span class="version">Version 1.0</span>
                             </div>
 
-
                             <span class="project-category">
-                                Minecraft Bedrock Add-on
+                                Release #004
                             </span>
 
-
-                            <h3>
-                                Elemental Trials
-                            </h3>
-
+                            <h3>Elemental Trials</h3>
 
                             <p>
-
                                 Five connected elemental trials combine
-                                Guardians, crystals, tools and saved
-                                progression into a larger Bedrock adventure.
-
+                                Guardians, crystals, tools and progression
+                                into a complete Bedrock adventure.
                             </p>
 
-
                             <div class="technology-badges">
-
                                 <span>Minecraft Bedrock</span>
                                 <span>JSON</span>
                                 <span>JavaScript</span>
                                 <span>Entities</span>
                                 <span>Progression</span>
                                 <span>Animations</span>
-
                             </div>
-
-
-                            <div class="development-time">
-
-                                <small>
-                                    COMPLETED IN
-                                </small>
-
-                                <strong>
-                                    Not recorded
-                                </strong>
-
-                            </div>
-
 
                             <div class="reward-preview">
-
-                                <small>
-                                    FINAL REWARD
-                                </small>
-
-                                <strong>
-                                    ⚔ Elemental Master Sword
-                                </strong>
-
-                                <span>
-                                    12 Damage • 2500 Durability
-                                </span>
-
+                                <small>FINAL REWARD</small>
+                                <strong>⚔ Elemental Master Sword</strong>
+                                <span>12 Damage • 2500 Durability</span>
                             </div>
 
+                            <div class="addon-action-grid">
+                                <a
+                                    href="https://github.com/JovarynGames"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="mini-action"
+                                >
+                                    GitHub
+                                </a>
 
-                            <details class="gallery-details">
+                                <a
+                                    href="#"
+                                    class="mini-action disabled-link"
+                                    aria-disabled="true"
+                                    data-message="Elemental Trials documentation is coming later."
+                                >
+                                    Documentation
+                                </a>
 
-                                <summary>
-                                    Screenshot Gallery
-                                </summary>
+                                <a
+                                    href="downloads/Elemental-Trials-v1.0.mcaddon"
+                                    class="mini-action download-action trials-download"
+                                    download
+                                >
+                                    Download
+                                </a>
+                            </div>
+                        </div>
+                    </article>
 
+                    <!-- ==========================================
+                         THE ELEMENTAL REALMS — RELEASE #005
+                         DIRECT DOWNLOAD ENABLED
+                    ========================================== -->
+                    <article
+                        class="official-project-card realms-card reveal"
+                        id="elemental-realms"
+                    >
+                        <div class="addon-project-art realms-art">
+                            <div class="realms-portal"></div>
 
-                                <div class="screenshot-grid">
+                            <div class="realms-symbol realms-symbol-fire">F</div>
+                            <div class="realms-symbol realms-symbol-ice">I</div>
+                            <div class="realms-symbol realms-symbol-lightning">L</div>
+                            <div class="realms-symbol realms-symbol-nature">N</div>
+                            <div class="realms-symbol realms-symbol-shadow">S</div>
 
-                                    <div class="screenshot-placeholder">
-                                        <strong>Main Cover</strong>
-                                        <span>Screenshot coming later</span>
-                                    </div>
+                            <strong>THE ELEMENTAL REALMS</strong>
+                        </div>
 
-                                    <div class="screenshot-placeholder">
-                                        <strong>Screenshot 1</strong>
-                                        <span>Screenshot coming later</span>
-                                    </div>
+                        <div class="official-project-content">
 
-                                    <div class="screenshot-placeholder">
-                                        <strong>Screenshot 2</strong>
-                                        <span>Screenshot coming later</span>
-                                    </div>
+                            <div class="badges">
+                                <span class="status released">Released</span>
+                                <span class="version">Release #005</span>
+                            </div>
 
-                                    <div class="screenshot-placeholder">
-                                        <strong>Screenshot 3</strong>
-                                        <span>Screenshot coming later</span>
-                                    </div>
+                            <span class="project-category">
+                                Minecraft Bedrock Adventure
+                            </span>
 
-                                </div>
+                            <h3>The Elemental Realms</h3>
 
-                            </details>
+                            <p>
+                                A larger elemental adventure featuring
+                                multiple realms, custom entities, portals,
+                                Guardians, exploration and structured
+                                progression.
+                            </p>
 
+                            <div class="technology-badges">
+                                <span>Minecraft Bedrock</span>
+                                <span>JavaScript</span>
+                                <span>JSON</span>
+                                <span>Custom Entities</span>
+                                <span>Portals</span>
+                                <span>Realms</span>
+                                <span>Game Systems</span>
+                            </div>
 
                             <div class="addon-action-grid">
 
@@ -1269,229 +731,98 @@
                                     GitHub
                                 </a>
 
-
                                 <a
-                                    href="#"
-                                    class="mini-action disabled-link"
-                                    aria-disabled="true"
-                                    data-message="Elemental Trials documentation is planned for a future update."
+                                    href="#polaris"
+                                    class="mini-action"
                                 >
-                                    Documentation
+                                    Project Polaris
                                 </a>
 
-
+                                <!-- REALMS DOWNLOAD -->
                                 <a
-                                    href="downloads/Elemental-Trials-v1.0.mcaddon"
-                                    class="mini-action download-action trials-download"
-                                    download
+                                    href="downloads/The-Elemental-Realms-v1.0.mcaddon"
+                                    class="mini-action download-action"
+                                    download="The-Elemental-Realms-v1.0.mcaddon"
+                                    aria-label="Download The Elemental Realms Minecraft Bedrock add-on"
                                 >
-                                    Download
+                                    ↓ Download
                                 </a>
 
                             </div>
 
                         </div>
-
-                    </article>
-
-
-                    <!-- =========================================
-                         FUTURE ADD-ON PLACEHOLDER
-                    ========================================== -->
-
-                    <article class="future-addon-card reveal">
-
-                        <span class="future-label">
-                            FUTURE ADD-ON
-                        </span>
-
-                        <div class="future-addon-icon">
-                            +
-                        </div>
-
-                        <h3>
-                            Add-on #004+
-                        </h3>
-
-                        <p>
-                            Space reserved for future Jovaryn Games
-                            Bedrock releases.
-                        </p>
-
                     </article>
 
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- =================================================
+        <!-- ==========================================
              LEARNING PROJECTS
-        ================================================== -->
-
-        <section
-            class="learning-section section"
-            id="learning"
-        >
-
+        ========================================== -->
+        <section class="learning-section section" id="learning">
             <div class="container">
 
                 <div class="section-heading reveal">
-
-                    <span class="section-label">
-                        EDUCATIONAL PORTFOLIO
-                    </span>
-
-                    <h2>
-                        Learning <span>Projects</span>
-                    </h2>
-
+                    <span class="section-label">EDUCATIONAL PORTFOLIO</span>
+                    <h2>Learning <span>Projects</span></h2>
                     <p>
-                        Earlier browser projects created while learning
-                        web development and game programming.
+                        Earlier browser projects that document the
+                        development path of Jovaryn Games.
                     </p>
-
                 </div>
 
-
                 <div class="learning-note reveal">
-
-                    <strong>
-                        Educational Project Notice
-                    </strong>
-
+                    <strong>Educational Project Notice</strong>
                     <p>
-
                         These projects were created while learning web
                         development and game programming. They are
                         educational portfolio projects inspired by Minecraft
                         and are not affiliated with or endorsed by
                         Mojang Studios.
-
                     </p>
-
                 </div>
-
 
                 <div class="learning-grid">
 
-
                     <!-- PARKOUR -->
-
                     <article class="learning-card reveal">
 
                         <div class="learning-cover parkour-cover">
-
                             <div class="parkour-platform p1"></div>
                             <div class="parkour-platform p2"></div>
                             <div class="parkour-platform p3"></div>
-
                             <div class="parkour-player"></div>
-
-                            <strong>
-                                PARKOUR
-                            </strong>
-
+                            <strong>PARKOUR</strong>
                         </div>
 
-
                         <div class="learning-content">
-
                             <div class="badges">
-
-                                <span class="status released">
-                                    Completed
-                                </span>
-
-                                <span class="version">
-                                    Version 1.0
-                                </span>
-
+                                <span class="status released">Completed</span>
                                 <span class="difficulty intermediate">
                                     Intermediate
                                 </span>
-
                             </div>
-
 
                             <span class="project-category">
                                 Learning Browser Game
                             </span>
 
-
-                            <h3>
-                                Minecraft Parkour Adventure
-                            </h3>
-
+                            <h3>Minecraft Parkour Adventure</h3>
 
                             <p>
-
-                                A platform-based browser project built
-                                while learning movement, level design
-                                and game interaction.
-
+                                A platform browser project created while
+                                learning movement, level design and game
+                                interaction.
                             </p>
 
-
                             <div class="technology-badges">
-
                                 <span>HTML</span>
                                 <span>CSS</span>
                                 <span>JavaScript</span>
-
                             </div>
-
-
-                            <div class="development-time">
-
-                                <small>
-                                    COMPLETED IN
-                                </small>
-
-                                <strong>
-                                    Not recorded
-                                </strong>
-
-                            </div>
-
-
-                            <details class="gallery-details">
-
-                                <summary>
-                                    Screenshot Gallery
-                                </summary>
-
-                                <div class="screenshot-grid">
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Main Cover</strong>
-                                        <span>Placeholder</span>
-                                    </div>
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Screenshot 1</strong>
-                                        <span>Placeholder</span>
-                                    </div>
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Screenshot 2</strong>
-                                        <span>Placeholder</span>
-                                    </div>
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Screenshot 3</strong>
-                                        <span>Placeholder</span>
-                                    </div>
-
-                                </div>
-
-                            </details>
-
 
                             <div class="project-actions">
-
                                 <a
                                     href="https://umercodingguy.github.io/minecraft-parkour-adventure/"
                                     target="_blank"
@@ -1501,7 +832,6 @@
                                     Play
                                 </a>
 
-
                                 <a
                                     href="https://github.com/UmerCodingGuy/minecraft-parkour-adventure"
                                     target="_blank"
@@ -1510,134 +840,51 @@
                                 >
                                     GitHub
                                 </a>
-
                             </div>
-
                         </div>
-
                     </article>
 
-
-                    <!-- ZOMBIE -->
-
+                    <!-- ZOMBIE ESCAPE -->
                     <article class="learning-card reveal">
 
                         <div class="learning-cover zombie-cover">
-
                             <div class="moon"></div>
-
                             <div class="zombie">
-
                                 <span class="eye left-eye"></span>
                                 <span class="eye right-eye"></span>
-
                             </div>
-
                             <div class="ground"></div>
-
-                            <strong>
-                                ZOMBIE ESCAPE
-                            </strong>
-
+                            <strong>ZOMBIE ESCAPE</strong>
                         </div>
 
-
                         <div class="learning-content">
-
                             <div class="badges">
-
-                                <span class="status released">
-                                    Completed
-                                </span>
-
-                                <span class="version">
-                                    Version 1.0
-                                </span>
-
+                                <span class="status released">Completed</span>
                                 <span class="difficulty intermediate">
                                     Intermediate
                                 </span>
-
                             </div>
-
 
                             <span class="project-category">
                                 Learning Browser Game
                             </span>
 
-
-                            <h3>
-                                Minecraft Zombie Escape
-                            </h3>
-
+                            <h3>Minecraft Zombie Escape</h3>
 
                             <p>
-
                                 A survival project focused on enemy
                                 movement, hazards and browser-game
                                 interaction.
-
                             </p>
 
-
                             <div class="technology-badges">
-
                                 <span>HTML</span>
                                 <span>CSS</span>
                                 <span>JavaScript</span>
                                 <span>Enemy AI</span>
-
                             </div>
-
-
-                            <div class="development-time">
-
-                                <small>
-                                    COMPLETED IN
-                                </small>
-
-                                <strong>
-                                    Not recorded
-                                </strong>
-
-                            </div>
-
-
-                            <details class="gallery-details">
-
-                                <summary>
-                                    Screenshot Gallery
-                                </summary>
-
-                                <div class="screenshot-grid">
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Main Cover</strong>
-                                        <span>Placeholder</span>
-                                    </div>
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Screenshot 1</strong>
-                                        <span>Placeholder</span>
-                                    </div>
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Screenshot 2</strong>
-                                        <span>Placeholder</span>
-                                    </div>
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Screenshot 3</strong>
-                                        <span>Placeholder</span>
-                                    </div>
-
-                                </div>
-
-                            </details>
-
 
                             <div class="project-actions">
-
                                 <a
                                     href="https://umercodingguy.github.io/minecraft-zombie-escape/"
                                     target="_blank"
@@ -1647,7 +894,6 @@
                                     Play
                                 </a>
 
-
                                 <a
                                     href="https://github.com/UmerCodingGuy/minecraft-zombie-escape"
                                     target="_blank"
@@ -1656,130 +902,49 @@
                                 >
                                     GitHub
                                 </a>
-
                             </div>
-
                         </div>
-
                     </article>
 
-
-                    <!-- DEFENSE -->
-
+                    <!-- CREEPER DEFENSE -->
                     <article class="learning-card reveal">
 
                         <div class="learning-cover defense-cover">
-
                             <div class="defense-grid"></div>
-
                             <div class="defense-core"></div>
-
                             <div class="enemy e1"></div>
                             <div class="enemy e2"></div>
                             <div class="enemy e3"></div>
-
-                            <strong>
-                                CREEPER DEFENSE
-                            </strong>
-
+                            <strong>CREEPER DEFENSE</strong>
                         </div>
 
-
                         <div class="learning-content">
-
                             <div class="badges">
-
-                                <span class="status released">
-                                    Completed
-                                </span>
-
-                                <span class="version">
-                                    Version 1.0
-                                </span>
-
+                                <span class="status released">Completed</span>
                                 <span class="difficulty intermediate">
                                     Intermediate
                                 </span>
-
                             </div>
-
 
                             <span class="project-category">
                                 Learning Browser Game
                             </span>
 
-
-                            <h3>
-                                Minecraft Creeper Defense
-                            </h3>
-
+                            <h3>Minecraft Creeper Defense</h3>
 
                             <p>
-
                                 A defense-game project focused on enemy
                                 waves, player interaction and strategy.
-
                             </p>
 
-
                             <div class="technology-badges">
-
                                 <span>HTML</span>
                                 <span>CSS</span>
                                 <span>JavaScript</span>
                                 <span>Game Logic</span>
-
                             </div>
-
-
-                            <div class="development-time">
-
-                                <small>
-                                    COMPLETED IN
-                                </small>
-
-                                <strong>
-                                    Not recorded
-                                </strong>
-
-                            </div>
-
-
-                            <details class="gallery-details">
-
-                                <summary>
-                                    Screenshot Gallery
-                                </summary>
-
-                                <div class="screenshot-grid">
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Main Cover</strong>
-                                        <span>Placeholder</span>
-                                    </div>
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Screenshot 1</strong>
-                                        <span>Placeholder</span>
-                                    </div>
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Screenshot 2</strong>
-                                        <span>Placeholder</span>
-                                    </div>
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Screenshot 3</strong>
-                                        <span>Placeholder</span>
-                                    </div>
-
-                                </div>
-
-                            </details>
-
 
                             <div class="project-actions">
-
                                 <a
                                     href="https://umercodingguy.github.io/minecraft-creeper-defense/"
                                     target="_blank"
@@ -1789,7 +954,6 @@
                                     Play
                                 </a>
 
-
                                 <a
                                     href="https://github.com/UmerCodingGuy/minecraft-creeper-defense"
                                     target="_blank"
@@ -1798,131 +962,51 @@
                                 >
                                     GitHub
                                 </a>
-
                             </div>
-
                         </div>
-
                     </article>
 
-
-                    <!-- FACTORY -->
-
+                    <!-- REDSTONE FACTORY -->
                     <article class="learning-card reveal">
 
                         <div class="learning-cover factory-cover">
-
                             <div class="factory-machine machine-left"></div>
                             <div class="factory-machine machine-right"></div>
-
                             <div class="factory-belt">
                                 <span></span>
                                 <span></span>
                                 <span></span>
                             </div>
-
-                            <strong>
-                                REDSTONE FACTORY
-                            </strong>
-
+                            <strong>REDSTONE FACTORY</strong>
                         </div>
 
-
                         <div class="learning-content">
-
                             <div class="badges">
-
-                                <span class="status released">
-                                    Completed
-                                </span>
-
-                                <span class="version">
-                                    Version 1.0
-                                </span>
-
+                                <span class="status released">Completed</span>
                                 <span class="difficulty advanced">
                                     Advanced
                                 </span>
-
                             </div>
-
 
                             <span class="project-category">
                                 Learning Browser Simulator
                             </span>
 
-
-                            <h3>
-                                Minecraft Redstone Factory
-                            </h3>
-
+                            <h3>Minecraft Redstone Factory</h3>
 
                             <p>
-
                                 A factory simulator focused on production,
                                 resources, automation and interface systems.
-
                             </p>
 
-
                             <div class="technology-badges">
-
                                 <span>HTML</span>
                                 <span>CSS</span>
                                 <span>JavaScript</span>
                                 <span>Simulation</span>
-
                             </div>
-
-
-                            <div class="development-time">
-
-                                <small>
-                                    COMPLETED IN
-                                </small>
-
-                                <strong>
-                                    Not recorded
-                                </strong>
-
-                            </div>
-
-
-                            <details class="gallery-details">
-
-                                <summary>
-                                    Screenshot Gallery
-                                </summary>
-
-                                <div class="screenshot-grid">
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Main Cover</strong>
-                                        <span>Placeholder</span>
-                                    </div>
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Screenshot 1</strong>
-                                        <span>Placeholder</span>
-                                    </div>
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Screenshot 2</strong>
-                                        <span>Placeholder</span>
-                                    </div>
-
-                                    <div class="screenshot-placeholder">
-                                        <strong>Screenshot 3</strong>
-                                        <span>Placeholder</span>
-                                    </div>
-
-                                </div>
-
-                            </details>
-
 
                             <div class="project-actions">
-
                                 <a
                                     href="https://umercodingguy.github.io/minecraft-redstone-factory/"
                                     target="_blank"
@@ -1932,7 +1016,6 @@
                                     Play
                                 </a>
 
-
                                 <a
                                     href="https://github.com/UmerCodingGuy/minecraft-redstone-factory"
                                     target="_blank"
@@ -1941,220 +1024,143 @@
                                 >
                                     GitHub
                                 </a>
-
                             </div>
-
                         </div>
-
                     </article>
 
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- =================================================
+        <!-- ==========================================
              OFFICIAL RELEASE HISTORY
-        ================================================== -->
-
-        <section
-            class="release-history section"
-            id="releases"
-        >
-
+        ========================================== -->
+        <section class="release-history section" id="releases">
             <div class="container">
 
                 <div class="section-heading reveal">
-
                     <span class="section-label">
                         OFFICIAL RELEASE HISTORY
                     </span>
-
-                    <h2>
-                        Studio <span>Releases</span>
-                    </h2>
-
+                    <h2>Studio <span>Releases</span></h2>
                     <p>
-                        The official Jovaryn Games release timeline.
+                        The evolution of Jovaryn Games from its first
+                        official game to Project Polaris.
                     </p>
-
                 </div>
-
 
                 <div class="release-timeline">
 
                     <article class="release-item reveal">
-
-                        <div class="release-number">
-                            #001
-                        </div>
-
+                        <div class="release-number">#001</div>
                         <div class="release-content">
-
-                            <span>
-                                Official Game
-                            </span>
-
-                            <h3>
-                                Temple of Trials
-                            </h3>
-
+                            <span>Official Browser Game</span>
+                            <h3>Temple of Trials</h3>
                             <p>
                                 The first official flagship browser game.
                             </p>
-
                         </div>
-
                     </article>
-
 
                     <div class="release-line"></div>
 
-
                     <article class="release-item reveal">
-
-                        <div class="release-number">
-                            #002
-                        </div>
-
+                        <div class="release-number">#002</div>
                         <div class="release-content">
-
-                            <span>
-                                Bedrock Add-on
-                            </span>
-
-                            <h3>
-                                Elemental Tools
-                            </h3>
-
+                            <span>Minecraft Bedrock</span>
+                            <h3>Elemental Tools</h3>
                             <p>
                                 The first official Minecraft Bedrock add-on.
                             </p>
-
                         </div>
-
                     </article>
 
-
                     <div class="release-line"></div>
-
 
                     <article class="release-item reveal">
-
-                        <div class="release-number">
-                            #003
-                        </div>
-
+                        <div class="release-number">#003</div>
                         <div class="release-content">
-
-                            <span>
-                                Bedrock Add-on
-                            </span>
-
-                            <h3>
-                                Elemental Guardians
-                            </h3>
-
+                            <span>Minecraft Bedrock</span>
+                            <h3>Elemental Guardians</h3>
                             <p>
-                                Introduced the first custom elemental entities.
+                                Introduced custom elemental entities.
                             </p>
-
                         </div>
-
                     </article>
 
-
                     <div class="release-line"></div>
-
 
                     <article class="release-item reveal">
-
-                        <div class="release-number">
-                            #004
-                        </div>
-
+                        <div class="release-number">#004</div>
                         <div class="release-content">
-
-                            <span>
-                                Latest Bedrock Release
-                            </span>
-
-                            <h3>
-                                Elemental Trials
-                            </h3>
-
+                            <span>Minecraft Bedrock Adventure</span>
+                            <h3>Elemental Trials</h3>
                             <p>
-                                Connected the elemental projects into a
-                                progression-based adventure.
+                                Connected tools, Guardians and progression
+                                into a complete adventure.
                             </p>
-
                         </div>
-
                     </article>
-
 
                     <div class="release-line"></div>
 
-
-                    <article class="release-item future-release reveal">
-
-                        <div class="release-number">
-                            #005
-                        </div>
-
+                    <article class="release-item reveal">
+                        <div class="release-number">#005</div>
                         <div class="release-content">
-
-                            <span>
-                                Future Release
-                            </span>
-
-                            <h3>
-                                To Be Announced
-                            </h3>
-
+                            <span>Minecraft Bedrock Adventure</span>
+                            <h3>The Elemental Realms</h3>
                             <p>
-                                Reserved for the next official Jovaryn Games release.
+                                Expanded the elemental system into
+                                multiple realms, exploration and larger
+                                game systems.
                             </p>
-
+                            <a
+                                href="downloads/The-Elemental-Realms-v1.0.mcaddon"
+                                download
+                                class="project-button secondary-project-button"
+                                style="display:inline-flex;margin-top:14px"
+                            >
+                                Download Release #005
+                            </a>
                         </div>
+                    </article>
 
+                    <div class="release-line release-line-polaris"></div>
+
+                    <article class="release-item polaris-release-item reveal">
+                        <div class="release-number release-candidate-number">
+                            RC1
+                        </div>
+                        <div class="release-content">
+                            <span>Release Candidate</span>
+                            <h3>Project Polaris</h3>
+                            <p>
+                                A quality-focused release candidate
+                                representing the studio's transition
+                                toward professional game development.
+                            </p>
+                        </div>
                     </article>
 
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- =================================================
+        <!-- ==========================================
              STUDIO TIMELINE
-        ================================================== -->
-
+        ========================================== -->
         <section class="studio-timeline-section">
-
             <div class="container">
 
                 <div class="section-heading reveal">
-
-                    <span class="section-label">
-                        STUDIO TIMELINE
-                    </span>
-
-                    <h2>
-                        How We <span>Progressed</span>
-                    </h2>
-
+                    <span class="section-label">STUDIO TIMELINE</span>
+                    <h2>Development <span>Evolution</span></h2>
                 </div>
 
-
                 <div class="studio-timeline reveal">
-
                     <div>
                         <span>01</span>
-                        <strong>Learning Websites</strong>
+                        <strong>Learning Phase</strong>
                     </div>
 
                     <i>↓</i>
@@ -2168,67 +1174,46 @@
 
                     <div>
                         <span>03</span>
-                        <strong>Temple of Trials</strong>
+                        <strong>Minecraft Add-ons</strong>
                     </div>
 
                     <i>↓</i>
 
                     <div>
                         <span>04</span>
-                        <strong>Elemental Tools</strong>
+                        <strong>Complete Adventures</strong>
                     </div>
 
                     <i>↓</i>
 
-                    <div>
+                    <div class="timeline-current">
                         <span>05</span>
-                        <strong>Elemental Guardians</strong>
+                        <strong>Project Polaris</strong>
                     </div>
 
                     <i>↓</i>
 
-                    <div>
+                    <div class="timeline-future">
                         <span>06</span>
-                        <strong>Elemental Trials</strong>
+                        <strong>Commercial Product — Coming Soon</strong>
                     </div>
-
-                    <i>↓</i>
-
-                    <div>
-                        <span>+</span>
-                        <strong>Future Releases</strong>
-                    </div>
-
                 </div>
 
             </div>
-
         </section>
 
-
-        <!-- =================================================
+        <!-- ==========================================
              MILESTONES
-        ================================================== -->
-
+        ========================================== -->
         <section class="milestones-section">
-
             <div class="container">
 
                 <div class="section-heading reveal">
-
-                    <span class="section-label">
-                        STUDIO MILESTONES
-                    </span>
-
-                    <h2>
-                        Progress <span>Unlocked</span>
-                    </h2>
-
+                    <span class="section-label">STUDIO MILESTONES</span>
+                    <h2>Progress <span>Unlocked</span></h2>
                 </div>
 
-
                 <div class="milestone-grid">
-
                     <article class="milestone completed reveal">
                         <span>✓</span>
                         <h3>Website Launch</h3>
@@ -2241,304 +1226,167 @@
 
                     <article class="milestone completed reveal">
                         <span>✓</span>
-                        <h3>First Official Game</h3>
-                    </article>
-
-                    <article class="milestone completed reveal">
-                        <span>✓</span>
                         <h3>First Minecraft Add-on</h3>
                     </article>
 
                     <article class="milestone completed reveal">
                         <span>✓</span>
-                        <h3>First Custom Entity</h3>
+                        <h3>First Complete Adventure</h3>
+                    </article>
+
+                    <article class="milestone completed polaris-milestone reveal">
+                        <span>✓</span>
+                        <h3>First Release Candidate</h3>
                     </article>
 
                     <article class="milestone future-milestone reveal">
                         <span>□</span>
-                        <h3>Marketplace Release</h3>
+                        <h3>First Commercial Product</h3>
                     </article>
 
                     <article class="milestone future-milestone reveal">
                         <span>□</span>
-                        <h3>Original Commercial Game</h3>
+                        <h3>First Public Release</h3>
                     </article>
-
                 </div>
 
             </div>
-
         </section>
 
-
-        <!-- =================================================
+        <!-- ==========================================
              STATISTICS
-        ================================================== -->
-
+        ========================================== -->
         <section class="stats-section">
-
             <div class="container">
 
                 <div class="section-heading reveal">
-
-                    <span class="section-label">
-                        STUDIO STATISTICS
-                    </span>
-
-                    <h2>
-                        Jovaryn Games <span>By The Numbers</span>
-                    </h2>
-
+                    <span class="section-label">STUDIO STATISTICS</span>
+                    <h2>Jovaryn Games <span>By The Numbers</span></h2>
                 </div>
-
 
                 <div class="stats-grid">
 
                     <article class="stat reveal">
-
                         <div>
-                            <span
-                                class="counter"
-                                data-target="8"
-                            >
-                                0
-                            </span>
-
+                            <span class="counter" data-target="9">0</span>
                             <span>+</span>
                         </div>
-
-                        <p>
-                            Projects Completed
-                        </p>
-
+                        <p>Projects</p>
                     </article>
 
-
                     <article class="stat reveal">
-
                         <div>
-                            <span
-                                class="counter"
-                                data-target="4"
-                            >
-                                0
-                            </span>
+                            <span class="counter" data-target="5">0</span>
                         </div>
-
-                        <p>
-                            Official Releases
-                        </p>
-
+                        <p>Official Releases</p>
                     </article>
 
-
                     <article class="stat reveal">
-
                         <div>
-                            <span
-                                class="counter"
-                                data-target="3"
-                            >
-                                0
-                            </span>
+                            <span class="counter" data-target="1">0</span>
                         </div>
-
-                        <p>
-                            Minecraft Add-ons
-                        </p>
-
+                        <p>Release Candidates</p>
                     </article>
 
-
                     <article class="stat reveal">
-
                         <div>
-                            <span
-                                class="counter"
-                                data-target="5"
-                            >
-                                0
-                            </span>
+                            <span class="counter" data-target="4">0</span>
                         </div>
-
-                        <p>
-                            Browser Games
-                        </p>
-
+                        <p>Minecraft Add-ons</p>
                     </article>
 
+                    <article class="stat reveal">
+                        <div>
+                            <span class="counter" data-target="5">0</span>
+                        </div>
+                        <p>Browser Games</p>
+                    </article>
 
                     <article class="stat reveal">
-
                         <div>
-                            <span
-                                class="counter"
-                                data-target="10"
-                            >
-                                0
-                            </span>
-
+                            <span class="counter" data-target="10">0</span>
                             <span>+</span>
                         </div>
-
-                        <p>
-                            Technologies Learned
-                        </p>
-
-                    </article>
-
-
-                    <article class="stat reveal">
-
-                        <div class="version-stat">
-                            2.0
-                        </div>
-
-                        <p>
-                            Website Version
-                        </p>
-
+                        <p>Technologies</p>
                     </article>
 
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- =================================================
-             GITHUB STATISTICS
-        ================================================== -->
-
+        <!-- ==========================================
+             GITHUB PORTFOLIO
+        ========================================== -->
         <section class="github-section">
-
             <div class="container">
 
                 <div class="section-heading reveal">
-
-                    <span class="section-label">
-                        GITHUB
-                    </span>
-
-                    <h2>
-                        Development <span>Overview</span>
-                    </h2>
-
+                    <span class="section-label">DEVELOPMENT</span>
+                    <h2>GitHub <span>Portfolio</span></h2>
                     <p>
-                        Jovaryn Games projects are managed and published
-                        using Git and GitHub.
+                        Jovaryn Games uses Git and GitHub for source
+                        management, project organization and publishing.
                     </p>
-
                 </div>
-
 
                 <div class="github-grid">
 
                     <article class="github-stat-card reveal">
-
-                        <small>
-                            REPOSITORIES
-                        </small>
-
-                        <strong>
-                            GitHub Organization
-                        </strong>
-
+                        <small>STUDIO</small>
+                        <strong>JovarynGames</strong>
                         <a
                             href="https://github.com/JovarynGames"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            View Repositories →
+                            View Organization →
                         </a>
-
                     </article>
 
-
                     <article class="github-stat-card reveal">
-
-                        <small>
-                            PROJECTS
-                        </small>
-
-                        <strong>
-                            8+
-                        </strong>
-
-                        <span>
-                            Published portfolio projects
-                        </span>
-
+                        <small>DEVELOPER</small>
+                        <strong>UmerCodingGuy</strong>
+                        <a
+                            href="https://github.com/UmerCodingGuy"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View Developer Profile →
+                        </a>
                     </article>
 
-
                     <article class="github-stat-card reveal">
-
-                        <small>
-                            GAMES
-                        </small>
-
-                        <strong>
-                            5
-                        </strong>
-
-                        <span>
-                            Browser game projects
-                        </span>
-
+                        <small>OFFICIAL RELEASES</small>
+                        <strong>5</strong>
+                        <span>Studio release history</span>
                     </article>
 
-
                     <article class="github-stat-card reveal">
-
-                        <small>
-                            ADD-ONS
-                        </small>
-
-                        <strong>
-                            3
-                        </strong>
-
-                        <span>
-                            Minecraft Bedrock releases
-                        </span>
-
+                        <small>RELEASE CANDIDATES</small>
+                        <strong>1</strong>
+                        <span>Project Polaris RC1</span>
                     </article>
 
+                    <article class="github-stat-card reveal">
+                        <small>BROWSER GAMES</small>
+                        <strong>5</strong>
+                        <span>Web game projects</span>
+                    </article>
 
                     <article class="github-stat-card reveal">
-
-                        <small>
-                            OFFICIAL RELEASES
-                        </small>
-
-                        <strong>
-                            4
-                        </strong>
-
-                        <span>
-                            Current official release history
-                        </span>
-
+                        <small>BEDROCK PROJECTS</small>
+                        <strong>4</strong>
+                        <span>Elemental development line</span>
                     </article>
 
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- =================================================
-             ABOUT
-        ================================================== -->
-
-        <section
-            class="about-section section"
-            id="about"
-        >
-
+        <!-- ==========================================
+             ABOUT — DEVELOPER CREDITS
+        ========================================== -->
+        <section class="about-section section" id="about">
             <div class="container about-grid">
 
                 <div class="about-content reveal">
@@ -2547,77 +1395,93 @@
                         ABOUT JOVARYN GAMES
                     </span>
 
-
                     <h2>
-
-                        Building Games.
-
-                        <span>
-                            Learning Every Release.
-                        </span>
-
+                        Building Original
+                        <span>Interactive Experiences.</span>
                     </h2>
 
-
                     <p>
-
                         Jovaryn Games is an independent game development
-                        studio creating browser games, Minecraft Bedrock
-                        add-ons and preparing for future original games.
-
+                        studio focused on creating original games and
+                        interactive experiences while continuing to
+                        explore Minecraft Bedrock development.
                     </p>
-
 
                     <p>
-
-                        The studio focuses on learning through real projects,
-                        improving each release and building a growing
-                        development portfolio.
-
+                        Each project builds on previous experience, with
+                        increasing focus on gameplay quality, storytelling,
+                        exploration, testing and professional development.
                     </p>
 
+                    <!-- OFFICIAL DEVELOPER CREDIT -->
+                    <div
+                        style="
+                            margin:24px 0;
+                            padding:22px;
+                            border:1px solid rgba(74,222,128,0.25);
+                            border-radius:16px;
+                            background:rgba(74,222,128,0.045);
+                        "
+                    >
+                        <span
+                            class="section-label"
+                            style="display:block;margin-bottom:10px"
+                        >
+                            FOUNDER & DEVELOPER
+                        </span>
+
+                        <h3 style="margin:0 0 10px;font-size:1.7rem">
+                            Umer
+                        </h3>
+
+                        <p style="margin-bottom:12px">
+                            Founder and developer of Jovaryn Games,
+                            creating browser games, Minecraft Bedrock
+                            projects and interactive experiences.
+                        </p>
+
+                        <a
+                            href="https://github.com/UmerCodingGuy"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style="color:var(--green,#4ade80);font-weight:700"
+                        >
+                            GitHub: UmerCodingGuy →
+                        </a>
+                    </div>
 
                     <div class="about-focus-grid">
-
                         <div>
                             <span>01</span>
-                            <strong>Browser Games</strong>
+                            <strong>Original Games</strong>
                         </div>
 
                         <div>
                             <span>02</span>
-                            <strong>Bedrock Add-ons</strong>
+                            <strong>Interactive Experiences</strong>
                         </div>
 
                         <div>
                             <span>03</span>
-                            <strong>Future Original Games</strong>
+                            <strong>Bedrock Development</strong>
                         </div>
-
                     </div>
 
                 </div>
 
-
+                <!-- EXISTING CODE ART -->
                 <div class="code-card reveal">
 
                     <div class="code-header">
-
                         <div>
                             <span></span>
                             <span></span>
                             <span></span>
                         </div>
-
-                        <p>
-                            studio-v2.js
-                        </p>
-
+                        <p>studio-v2.1.js</p>
                     </div>
 
-
                     <div class="code-body">
-
                         <p>
                             <span class="purple">const</span>
                             studio =
@@ -2626,91 +1490,66 @@
 
                         <p>
                             <span class="purple">const</span>
+                            developer =
+                            <span class="green">"Umer"</span>;
+                        </p>
+
+                        <p>
+                            <span class="purple">const</span>
                             version =
-                            <span class="green">"2.0"</span>;
+                            <span class="green">"2.1"</span>;
+                        </p>
+
+                        <p>
+                            <span class="purple">const</span>
+                            milestone =
+                            <span class="green">"Project Polaris RC1"</span>;
                         </p>
 
                         <p>
                             <span class="purple">function</span>
-                            keepBuilding() {
+                            buildFuture() {
                         </p>
 
-                        <p class="indent">
-                            learn();
-                        </p>
+                        <p class="indent">learn();</p>
+                        <p class="indent">create();</p>
+                        <p class="indent">polish();</p>
+                        <p class="indent">test();</p>
 
-                        <p class="indent">
-                            create();
-                        </p>
+                        <p class="indent highlight">goBeyond();</p>
 
-                        <p class="indent">
-                            release();
-                        </p>
-
-                        <p class="indent highlight">
-                            goBeyond();
-                        </p>
-
-                        <p>
-                            }
-                        </p>
-
+                        <p>}</p>
                     </div>
-
                 </div>
 
             </div>
-
         </section>
 
-
-        <!-- =================================================
-             VERSION 3 PREPARATION
-        ================================================== -->
-
+        <!-- ==========================================
+             FUTURE
+        ========================================== -->
         <section class="version-three-section">
-
             <div class="container">
 
                 <div class="version-three-card reveal">
-
                     <div>
-
-                        <span class="section-label">
-                            PREPARING FOR VERSION 3
-                        </span>
-
-                        <h2>
-                            Future Navigation
-                        </h2>
-
+                        <span class="section-label">NEXT CHAPTER</span>
+                        <h2>Building Beyond Polaris</h2>
                         <p>
-
-                            These areas are reserved for future versions.
-                            No extra pages have been created yet.
-
+                            Future updates will expand Jovaryn Games
+                            with dedicated news, downloads, contact
+                            features and future original releases.
                         </p>
-
                     </div>
 
-
-                    <nav
-                        class="future-nav"
-                        aria-label="Future Version 3 navigation"
-                    >
-
-                        <a href="#games">
-                            Games
-                        </a>
-
-                        <a href="#addons">
-                            Add-ons
-                        </a>
+                    <nav class="future-nav" aria-label="Future navigation">
+                        <a href="#games">Games</a>
+                        <a href="#addons">Add-ons</a>
 
                         <a
                             href="#"
                             class="placeholder-link"
-                            data-message="News is planned for Website Version 3."
+                            data-message="News is planned for a future website version."
                         >
                             News
                         </a>
@@ -2718,7 +1557,7 @@
                         <a
                             href="#"
                             class="placeholder-link"
-                            data-message="A dedicated Downloads page is planned for Website Version 3."
+                            data-message="A dedicated Downloads page is planned for a future website version."
                         >
                             Downloads
                         </a>
@@ -2726,164 +1565,107 @@
                         <a
                             href="#"
                             class="placeholder-link"
-                            data-message="Contact features are planned for Website Version 3."
+                            data-message="Contact features are planned for a future website version."
                         >
                             Contact
                         </a>
-
                     </nav>
-
                 </div>
 
             </div>
-
         </section>
 
     </main>
 
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
-
+    <!-- ==========================================
+         FOOTER — WITH DEVELOPER CREDITS
+    ========================================== -->
     <footer class="footer">
-
         <div class="container">
 
             <div class="footer-grid">
 
                 <div class="footer-brand">
-
-                    <a
-                        href="#home"
-                        class="footer-logo"
-                    >
+                    <a href="#home" class="footer-logo">
                         JOVARYN <span>GAMES</span>
                     </a>
 
-                    <p>
-                        Create. Play. Go Beyond.
-                    </p>
+                    <p>Create. Play. Go Beyond.</p>
 
                     <div class="footer-version-box">
-
-                        <span>
-                            Website Version 2.0
-                        </span>
-
+                        <span>Website Version 2.1</span>
                         <small>
                             Last Updated:
-                            <strong id="lastUpdated">
-                                Loading...
-                            </strong>
+                            <strong id="lastUpdated">Loading...</strong>
                         </small>
-
                     </div>
-
                 </div>
 
-
                 <div class="footer-column">
-
-                    <h3>
-                        Projects
-                    </h3>
-
-                    <a href="#games">
-                        Games
-                    </a>
-
-                    <a href="#addons">
-                        Add-ons
-                    </a>
-
-                    <a href="#learning">
-                        Learning Projects
-                    </a>
-
-                    <a href="#releases">
-                        Release History
-                    </a>
-
+                    <h3>Projects</h3>
+                    <a href="#polaris">Project Polaris</a>
+                    <a href="#games">Games</a>
+                    <a href="#addons">Bedrock Projects</a>
+                    <a href="#elemental-realms">The Elemental Realms</a>
+                    <a href="#learning">Learning Projects</a>
                 </div>
 
-
                 <div class="footer-column">
+                    <h3>Developer</h3>
 
-                    <h3>
-                        Studio
-                    </h3>
+                    <span>Umer</span>
+                    <span>Founder & Developer</span>
+
+                    <a
+                        href="https://github.com/UmerCodingGuy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        UmerCodingGuy
+                    </a>
 
                     <a
                         href="https://github.com/JovarynGames"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        GitHub Organization
+                        Jovaryn Games GitHub
                     </a>
-
-                    <a
-                        href="https://jovaryngames.com"
-                    >
-                        jovaryngames.com
-                    </a>
-
-                    <span>
-                        Independent Game Studio
-                    </span>
-
                 </div>
 
-
                 <div class="footer-column">
-
-                    <h3>
-                        Version 3
-                    </h3>
-
-                    <span>
-                        News
-                    </span>
-
-                    <span>
-                        Downloads
-                    </span>
-
-                    <span>
-                        Contact
-                    </span>
-
+                    <h3>Current Milestone</h3>
+                    <span>Project Polaris</span>
+                    <span>Release Candidate 1</span>
+                    <span>Mentor Score: 9.8 / 10</span>
                 </div>
 
             </div>
 
-
             <div class="footer-bottom">
-
                 <p>
-
-                    ©
-                    <span id="currentYear"></span>
-                    Jovaryn Games.
-                    All rights reserved.
-
+                    © <span id="currentYear"></span>
+                    Jovaryn Games. All rights reserved.
                 </p>
 
                 <p>
-                    Website Version 2.0
+                    Founded and developed by
+                    <a
+                        href="https://github.com/UmerCodingGuy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Umer
+                    </a>
                 </p>
 
+                <p>Website Version 2.1</p>
             </div>
 
         </div>
-
     </footer>
 
-
-    <!-- =====================================================
-         BACK TO TOP
-    ====================================================== -->
-
+    <!-- BACK TO TOP -->
     <button
         class="back-to-top"
         id="backToTop"
@@ -2893,18 +1675,14 @@
         ↑
     </button>
 
-
     <noscript>
-
         <div class="noscript">
-            Please enable JavaScript for the full Jovaryn Games experience.
+            Please enable JavaScript for the full
+            Jovaryn Games experience.
         </div>
-
     </noscript>
-
 
     <script src="js/script.js"></script>
 
 </body>
-
 </html>

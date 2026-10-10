@@ -1,9 +1,10 @@
+"use strict";
+
+
 /* =========================================================
    JOVARYN GAMES
-   WEBSITE VERSION 2.0
+   WEBSITE VERSION 2.1
 ========================================================= */
-
-"use strict";
 
 
 /* =========================================================
@@ -71,7 +72,7 @@ window.addEventListener(
 
 
 /* =========================================================
-   YEAR
+   CURRENT YEAR
 ========================================================= */
 
 if (currentYear) {
@@ -93,10 +94,15 @@ if (lastUpdated) {
 
 
     if (
-        !Number.isNaN(
+        Number.isNaN(
             modified.getTime()
         )
     ) {
+
+        lastUpdated.textContent =
+            "Version 2.1";
+
+    } else {
 
         lastUpdated.textContent =
             modified.toLocaleDateString(
@@ -108,11 +114,6 @@ if (lastUpdated) {
                 }
             );
 
-    } else {
-
-        lastUpdated.textContent =
-            "2026";
-
     }
 
 }
@@ -122,10 +123,43 @@ if (lastUpdated) {
    THEME
 ========================================================= */
 
+function getSavedTheme() {
+
+    try {
+
+        return localStorage.getItem(
+            "jovaryn-theme"
+        );
+
+    } catch (error) {
+
+        return null;
+
+    }
+
+}
+
+
+function saveTheme(theme) {
+
+    try {
+
+        localStorage.setItem(
+            "jovaryn-theme",
+            theme
+        );
+
+    } catch (error) {
+
+        /* Local storage unavailable */
+
+    }
+
+}
+
+
 const savedTheme =
-    localStorage.getItem(
-        "jovaryn-theme"
-    );
+    getSavedTheme();
 
 
 if (savedTheme === "light") {
@@ -139,20 +173,21 @@ if (savedTheme === "light") {
 
 function updateThemeIcon() {
 
-    const lightMode =
+    if (!themeIcon) {
+        return;
+    }
+
+
+    const light =
         document.body.classList.contains(
             "light-theme"
         );
 
 
-    if (themeIcon) {
-
-        themeIcon.textContent =
-            lightMode
-                ? "☾"
-                : "☀";
-
-    }
+    themeIcon.textContent =
+        light
+            ? "☾"
+            : "☀";
 
 }
 
@@ -171,15 +206,14 @@ if (themeToggle) {
             );
 
 
-            const lightMode =
+            const light =
                 document.body.classList.contains(
                     "light-theme"
                 );
 
 
-            localStorage.setItem(
-                "jovaryn-theme",
-                lightMode
+            saveTheme(
+                light
                     ? "light"
                     : "dark"
             );
@@ -199,26 +233,28 @@ if (themeToggle) {
 
 function closeMenu() {
 
-    if (
-        !navLinksContainer ||
-        !menuToggle
-    ) {
-        return;
+    if (navLinksContainer) {
+
+        navLinksContainer.classList.remove(
+            "open"
+        );
+
     }
 
 
-    navLinksContainer.classList.remove(
-        "open"
-    );
+    if (menuToggle) {
 
-    menuToggle.classList.remove(
-        "open"
-    );
+        menuToggle.classList.remove(
+            "open"
+        );
 
-    menuToggle.setAttribute(
-        "aria-expanded",
-        "false"
-    );
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+    }
+
 
     document.body.classList.remove(
         "menu-open"
@@ -236,21 +272,21 @@ if (
         "click",
         () => {
 
-            const opened =
-                navLinksContainer
-                    .classList
-                    .toggle("open");
+            const open =
+                navLinksContainer.classList.toggle(
+                    "open"
+                );
 
 
             menuToggle.classList.toggle(
                 "open",
-                opened
+                open
             );
 
 
             menuToggle.setAttribute(
                 "aria-expanded",
-                opened
+                open
                     ? "true"
                     : "false"
             );
@@ -258,7 +294,7 @@ if (
 
             document.body.classList.toggle(
                 "menu-open",
-                opened
+                open
             );
 
         }
@@ -280,7 +316,7 @@ navLinks.forEach(
 
 
 /* =========================================================
-   INTERNAL LINKS
+   SMOOTH SCROLL
 ========================================================= */
 
 document
@@ -294,24 +330,35 @@ document
                 "click",
                 event => {
 
-                    const targetId =
+                    const href =
                         link.getAttribute(
                             "href"
                         );
 
 
                     if (
-                        !targetId ||
-                        targetId === "#"
+                        !href ||
+                        href === "#"
                     ) {
                         return;
                     }
 
 
-                    const target =
-                        document.querySelector(
-                            targetId
-                        );
+                    let target;
+
+
+                    try {
+
+                        target =
+                            document.querySelector(
+                                href
+                            );
+
+                    } catch (error) {
+
+                        return;
+
+                    }
 
 
                     if (!target) {
@@ -341,7 +388,7 @@ document
    TOAST
 ========================================================= */
 
-let toastTimeout;
+let toastTimer;
 
 
 function showToast(message) {
@@ -351,8 +398,8 @@ function showToast(message) {
     }
 
 
-    window.clearTimeout(
-        toastTimeout
+    clearTimeout(
+        toastTimer
     );
 
 
@@ -365,7 +412,7 @@ function showToast(message) {
     );
 
 
-    toastTimeout =
+    toastTimer =
         window.setTimeout(
             () => {
 
@@ -379,10 +426,6 @@ function showToast(message) {
 
 }
 
-
-/* =========================================================
-   FUTURE / DISABLED LINKS
-========================================================= */
 
 document
     .querySelectorAll(
@@ -398,12 +441,10 @@ document
                     event.preventDefault();
 
 
-                    const message =
+                    showToast(
                         link.dataset.message ||
-                        "This feature is planned for a future update.";
-
-
-                    showToast(message);
+                        "This feature is planned for a future update."
+                    );
 
                 }
             );
@@ -413,7 +454,7 @@ document
 
 
 /* =========================================================
-   SCROLL HANDLER
+   SCROLL HANDLING
 ========================================================= */
 
 function handleScroll() {
@@ -444,23 +485,19 @@ function handleScroll() {
 
     if (scrollProgress) {
 
-        const totalHeight =
-            document.documentElement
-                .scrollHeight -
+        const pageHeight =
+            document.documentElement.scrollHeight -
             window.innerHeight;
 
 
-        const percentage =
-            totalHeight > 0
-                ? (
-                    scrollTop /
-                    totalHeight
-                ) * 100
+        const progress =
+            pageHeight > 0
+                ? (scrollTop / pageHeight) * 100
                 : 0;
 
 
         scrollProgress.style.width =
-            `${percentage}%`;
+            `${Math.min(progress, 100)}%`;
 
     }
 
@@ -520,8 +557,7 @@ function updateActiveNavigation() {
         section => {
 
             const sectionTop =
-                section.offsetTop -
-                150;
+                section.offsetTop - 170;
 
 
             if (
@@ -541,7 +577,7 @@ function updateActiveNavigation() {
     navLinks.forEach(
         link => {
 
-            const href =
+            const target =
                 link.getAttribute(
                     "href"
                 );
@@ -549,8 +585,8 @@ function updateActiveNavigation() {
 
             link.classList.toggle(
                 "active",
-                href ===
-                    `#${currentSection}`
+                target ===
+                `#${currentSection}`
             );
 
         }
@@ -572,6 +608,16 @@ updateActiveNavigation();
 
 
 /* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+const reducedMotion =
+    window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+
+/* =========================================================
    REVEAL ANIMATIONS
 ========================================================= */
 
@@ -581,13 +627,10 @@ const revealElements =
     );
 
 
-const reducedMotion =
-    window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-
-if (reducedMotion) {
+if (
+    reducedMotion ||
+    !("IntersectionObserver" in window)
+) {
 
     revealElements.forEach(
         element => {
@@ -599,13 +642,10 @@ if (reducedMotion) {
         }
     );
 
-} else if (
-    "IntersectionObserver" in window
-) {
+} else {
 
     const revealObserver =
         new IntersectionObserver(
-
             entries => {
 
                 entries.forEach(
@@ -615,17 +655,14 @@ if (reducedMotion) {
                             entry.isIntersecting
                         ) {
 
-                            entry.target
-                                .classList
-                                .add(
-                                    "visible"
-                                );
+                            entry.target.classList.add(
+                                "visible"
+                            );
 
 
-                            revealObserver
-                                .unobserve(
-                                    entry.target
-                                );
+                            revealObserver.unobserve(
+                                entry.target
+                            );
 
                         }
 
@@ -633,13 +670,10 @@ if (reducedMotion) {
                 );
 
             },
-
             {
                 threshold: 0.1,
-                rootMargin:
-                    "0px 0px -30px 0px"
+                rootMargin: "0px 0px -40px 0px"
             }
-
         );
 
 
@@ -653,23 +687,11 @@ if (reducedMotion) {
         }
     );
 
-} else {
-
-    revealElements.forEach(
-        element => {
-
-            element.classList.add(
-                "visible"
-            );
-
-        }
-    );
-
 }
 
 
 /* =========================================================
-   COUNTERS
+   ANIMATED COUNTERS
 ========================================================= */
 
 const counters =
@@ -680,15 +702,25 @@ const counters =
 
 function animateCounter(counter) {
 
+    if (
+        counter.dataset.animated ===
+        "true"
+    ) {
+        return;
+    }
+
+
+    counter.dataset.animated =
+        "true";
+
+
     const target =
         Number(
             counter.dataset.target
         );
 
 
-    if (
-        !Number.isFinite(target)
-    ) {
+    if (!Number.isFinite(target)) {
         return;
     }
 
@@ -699,32 +731,31 @@ function animateCounter(counter) {
             target;
 
         return;
-
     }
 
 
     const duration =
-        1200;
+        900;
 
-    const start =
+
+    const startTime =
         performance.now();
 
 
-    function update(time) {
+    function updateCounter(time) {
 
         const elapsed =
-            time - start;
+            time - startTime;
 
 
         const progress =
             Math.min(
-                elapsed /
-                duration,
+                elapsed / duration,
                 1
             );
 
 
-        const eased =
+        const easedProgress =
             1 -
             Math.pow(
                 1 - progress,
@@ -732,16 +763,21 @@ function animateCounter(counter) {
             );
 
 
-        counter.textContent =
-            Math.floor(
-                eased * target
+        const value =
+            Math.round(
+                target *
+                easedProgress
             );
+
+
+        counter.textContent =
+            value;
 
 
         if (progress < 1) {
 
             requestAnimationFrame(
-                update
+                updateCounter
             );
 
         } else {
@@ -755,19 +791,19 @@ function animateCounter(counter) {
 
 
     requestAnimationFrame(
-        update
+        updateCounter
     );
 
 }
 
 
 if (
+    counters.length > 0 &&
     "IntersectionObserver" in window
 ) {
 
     const counterObserver =
         new IntersectionObserver(
-
             entries => {
 
                 entries.forEach(
@@ -782,10 +818,9 @@ if (
                             );
 
 
-                            counterObserver
-                                .unobserve(
-                                    entry.target
-                                );
+                            counterObserver.unobserve(
+                                entry.target
+                            );
 
                         }
 
@@ -793,11 +828,9 @@ if (
                 );
 
             },
-
             {
-                threshold: 0.45
+                threshold: 0.4
             }
-
         );
 
 
@@ -814,30 +847,36 @@ if (
 } else {
 
     counters.forEach(
-        animateCounter
+        counter => {
+
+            animateCounter(
+                counter
+            );
+
+        }
     );
 
 }
 
 
 /* =========================================================
-   LIGHT CARD TILT
+   CARD TILT
 ========================================================= */
 
 const finePointer =
     window.matchMedia(
         "(pointer: fine)"
-    );
+    ).matches;
 
 
 const tiltCards =
     document.querySelectorAll(
-        ".learning-card, .official-project-card"
+        ".official-project-card, .learning-card"
     );
 
 
 if (
-    finePointer.matches &&
+    finePointer &&
     !reducedMotion
 ) {
 
@@ -862,26 +901,33 @@ if (
                         rect.top;
 
 
+                    const centerX =
+                        rect.width / 2;
+
+
+                    const centerY =
+                        rect.height / 2;
+
+
                     const rotateY =
                         (
-                            x /
-                            rect.width -
-                            0.5
-                        ) * 1.2;
+                            x -
+                            centerX
+                        ) / 45;
 
 
                     const rotateX =
-                        (
-                            0.5 -
-                            y /
-                            rect.height
-                        ) * 1.2;
+                        -(
+                            y -
+                            centerY
+                        ) / 45;
 
 
                     card.style.transform =
-                        `translateY(-6px)
+                        `perspective(900px)
                          rotateX(${rotateX}deg)
-                         rotateY(${rotateY}deg)`;
+                         rotateY(${rotateY}deg)
+                         translateY(-4px)`;
 
                 }
             );
@@ -904,7 +950,35 @@ if (
 
 
 /* =========================================================
-   ESCAPE KEY CLOSES MOBILE MENU
+   EXTERNAL LINKS
+========================================================= */
+
+document
+    .querySelectorAll(
+        'a[target="_blank"]'
+    )
+    .forEach(
+        link => {
+
+            if (
+                !link.hasAttribute(
+                    "rel"
+                )
+            ) {
+
+                link.setAttribute(
+                    "rel",
+                    "noopener noreferrer"
+                );
+
+            }
+
+        }
+    );
+
+
+/* =========================================================
+   ESCAPE KEY
 ========================================================= */
 
 document.addEventListener(
@@ -946,7 +1020,7 @@ window.addEventListener(
 
 
 /* =========================================================
-   CONSOLE
+   VERSION INFORMATION
 ========================================================= */
 
 console.log(
@@ -954,7 +1028,11 @@ console.log(
 );
 
 console.log(
-    "Website Version 2.0"
+    "Website Version 2.1"
+);
+
+console.log(
+    "Project Polaris — Release Candidate 1"
 );
 
 console.log(

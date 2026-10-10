@@ -1,0 +1,1228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Project Polaris RC1 | Jovaryn Games</title>
+
+    <meta name="description"
+        content="Explore Project Polaris Release Candidate 1 by Jovaryn Games. Discover the adventure, features, artwork, and development journey.">
+
+    <meta name="author" content="Jovaryn Games">
+    <meta name="creator" content="Umer - UmerCodingGuy">
+    <meta name="theme-color" content="#070a0f">
+
+    <link rel="canonical" href="https://jovaryngames.com/project-polaris/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Project Polaris RC1 | Jovaryn Games">
+    <meta property="og:description"
+        content="Discover Project Polaris Release Candidate 1, the latest milestone from Jovaryn Games. Mentor review: 9.8/10.">
+    <meta property="og:url" content="https://jovaryngames.com/project-polaris/">
+    <meta property="og:image"
+        content="https://jovaryngames.com/assets/images/polaris/polaris-cover.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        /* PROJECT POLARIS PAGE */
+
+        .polaris-page-hero-media {
+            position: relative;
+            width: 100%;
+            margin: 0;
+            overflow: hidden;
+            border: 1px solid var(--green-border);
+            border-radius: 22px;
+            background: var(--card);
+            box-shadow: var(--shadow);
+        }
+
+        .polaris-page-hero-media img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+        }
+
+        .polaris-page-hero-media figcaption {
+            padding: 13px 17px;
+            color: var(--text-2);
+            font-size: 0.76rem;
+        }
+
+        .polaris-page-score {
+            margin-top: 25px;
+            padding: 16px 20px;
+            border: 1px solid var(--green-border);
+            border-radius: 14px;
+            background: var(--card);
+        }
+
+        .polaris-page-score small {
+            display: block;
+            color: var(--text-2);
+            font-size: 0.73rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+        }
+
+        .polaris-page-score strong {
+            display: block;
+            color: var(--green);
+            font-size: 2.5rem;
+            line-height: 1.25;
+        }
+
+        .polaris-page-score p {
+            color: var(--text-2);
+            font-size: 0.82rem;
+        }
+
+        /* DEVELOPER CREDIT */
+
+        .polaris-developer-credit {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 28px;
+            padding: 23px;
+            border: 1px solid var(--green-border);
+            border-radius: 16px;
+            background: var(--card);
+        }
+
+        .polaris-developer-avatar {
+            display: grid;
+            place-items: center;
+            width: 65px;
+            height: 65px;
+            flex-shrink: 0;
+            border: 1px solid var(--green-border);
+            border-radius: 16px;
+            color: var(--green);
+            background: rgba(74, 222, 128, 0.06);
+            font-size: 2rem;
+            font-weight: 900;
+        }
+
+        .polaris-developer-info {
+            flex: 1;
+            min-width: 170px;
+        }
+
+        .polaris-developer-info small {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--green);
+            font-size: 0.69rem;
+            font-weight: 800;
+            letter-spacing: 0.09em;
+        }
+
+        .polaris-developer-info h3 {
+            margin: 0 0 5px;
+            font-size: 1.4rem;
+        }
+
+        .polaris-developer-info p {
+            margin: 0;
+            color: var(--text-2);
+            font-size: 0.85rem;
+        }
+
+        .polaris-developer-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 11px 16px;
+            border: 1px solid var(--green-border);
+            border-radius: 10px;
+            color: var(--green);
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .polaris-developer-link:hover {
+            transform: translateY(-2px);
+        }
+
+        /* GALLERY */
+
+        .polaris-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .polaris-gallery-card {
+            min-width: 0;
+            margin: 0;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: var(--card);
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .polaris-gallery-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--green-border);
+        }
+
+        .polaris-gallery-card:first-child {
+            grid-column: 1 / -1;
+        }
+
+        .polaris-gallery-card a {
+            display: block;
+            overflow: hidden;
+        }
+
+        .polaris-gallery-card img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            transition: transform 0.35s ease;
+        }
+
+        .polaris-gallery-card a:hover img {
+            transform: scale(1.025);
+        }
+
+        .polaris-gallery-caption {
+            padding: 19px 21px 22px;
+        }
+
+        .polaris-gallery-caption small {
+            color: var(--green);
+            font-size: 0.68rem;
+            font-weight: 850;
+            letter-spacing: 0.1em;
+        }
+
+        .polaris-gallery-caption h3 {
+            margin-top: 5px;
+            font-size: 1.2rem;
+        }
+
+        .polaris-gallery-caption p {
+            margin-top: 6px;
+            color: var(--text-2);
+            font-size: 0.83rem;
+        }
+
+        .polaris-gallery-note {
+            margin-top: 23px;
+            color: var(--text-2);
+            font-size: 0.82rem;
+            text-align: center;
+        }
+
+        /* TRAILER */
+
+        .polaris-trailer-panel {
+            max-width: 780px;
+            margin-inline: auto;
+            padding: 48px 28px;
+            border: 1px solid var(--green-border);
+            border-radius: 20px;
+            background: var(--card);
+            text-align: center;
+        }
+
+        .polaris-trailer-icon {
+            display: grid;
+            place-items: center;
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 22px;
+            border: 1px solid var(--green-border);
+            border-radius: 50%;
+            color: var(--green);
+            font-size: 1.7rem;
+        }
+
+        .polaris-trailer-panel h3 {
+            font-size: 1.6rem;
+        }
+
+        .polaris-trailer-panel p {
+            max-width: 530px;
+            margin: 10px auto 23px;
+            color: var(--text-2);
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 760px) {
+            .polaris-gallery {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .polaris-gallery-card:first-child {
+                grid-column: auto;
+            }
+
+            .polaris-gallery-caption {
+                padding: 16px;
+            }
+
+            .polaris-page-hero-media img {
+                aspect-ratio: 16 / 9;
+            }
+
+            .polaris-developer-credit {
+                padding: 18px;
+            }
+
+            .polaris-developer-link {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .polaris-gallery-card,
+            .polaris-gallery-card img,
+            .polaris-developer-link {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="polaris-page">
+
+    <!-- LOADER -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-logo">
+                JOVARYN <span>GAMES</span>
+            </div>
+
+            <div class="loader-track">
+                <div class="loader-bar"></div>
+            </div>
+
+            <p>Loading Project Polaris...</p>
+        </div>
+    </div>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <div
+        class="site-toast"
+        id="siteToast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+    <!-- NAVIGATION -->
+    <header class="header" id="header">
+        <nav class="navbar" aria-label="Project navigation">
+
+            <a href="../" class="logo">
+                JOVARYN <span>GAMES</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li>
+                    <a href="#overview" class="nav-link active">
+                        Overview
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#story" class="nav-link">
+                        Story
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#features" class="nav-link">
+                        Features
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#gameplay" class="nav-link">
+                        Gameplay
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#gallery" class="nav-link">
+                        Gallery
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#journey" class="nav-link">
+                        Journey
+                    </a>
+                </li>
+            </ul>
+
+            <div class="nav-actions">
+
+                <button
+                    class="theme-toggle"
+                    id="themeToggle"
+                    type="button"
+                    aria-label="Switch color theme"
+                >
+                    <span id="themeIcon">☀</span>
+                </button>
+
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="navLinks"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ==========================================
+             OVERVIEW
+        ========================================== -->
+        <section class="hero section" id="overview">
+
+            <div class="hero-background">
+                <div class="grid-background"></div>
+                <div class="glow glow-one"></div>
+                <div class="glow glow-two"></div>
+            </div>
+
+            <div class="hero-container">
+
+                <div class="hero-content reveal">
+
+                    <div class="hero-badge">
+                        <span></span>
+                        Jovaryn Games Release Candidate 1
+                    </div>
+
+                    <h1>
+                        PROJECT
+                        <strong>POLARIS</strong>
+                    </h1>
+
+                    <div class="tagline">
+                        <span>Explore.</span>
+                        <span>Fight.</span>
+                        <span>Progress.</span>
+                    </div>
+
+                    <p class="hero-description">
+                        Project Polaris is a major milestone for
+                        Jovaryn Games, bringing together exploration,
+                        elemental challenges, combat, and progression
+                        within a Minecraft Bedrock adventure.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#gallery" class="button primary-button">
+                            View Gallery →
+                        </a>
+
+                        <a href="../" class="button secondary-button">
+                            Back to Jovaryn Games
+                        </a>
+
+                    </div>
+
+                    <div class="hero-info">
+
+                        <div>
+                            <small>STATUS</small>
+                            <strong>Release Candidate 1</strong>
+                        </div>
+
+                        <span class="info-line"></span>
+
+                        <div>
+                            <small>FINAL RELEASE</small>
+                            <strong>Not Yet</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="polaris-page-score">
+                        <small>MENTOR REVIEW</small>
+                        <strong>9.8 / 10</strong>
+                        <p>Release Candidate 1 Approved</p>
+                    </div>
+
+                </div>
+
+                <div class="hero-art reveal">
+
+                    <figure class="polaris-page-hero-media">
+
+                        <img
+                            src="../assets/images/polaris/polaris-cover.png"
+                            alt="Project Polaris promotional cover artwork"
+                            fetchpriority="high"
+                            decoding="async"
+                        >
+
+                        <figcaption>
+                            Project Polaris — Promotional Artwork
+                        </figcaption>
+
+                    </figure>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             DEVELOPER NOTE AND CREDITS
+        ========================================== -->
+        <section class="latest-section">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <span class="section-label">
+                        DEVELOPER NOTE
+                    </span>
+
+                    <h2>A New <span>Milestone</span></h2>
+                </div>
+
+                <div class="developer-note reveal">
+                    <span>FROM JOVARYN GAMES</span>
+
+                    <p>
+                        Project Polaris represents the biggest milestone
+                        in Jovaryn Games so far and marks the transition
+                        from learning projects toward professional game
+                        development.
+                    </p>
+                </div>
+
+                <!-- OFFICIAL DEVELOPER CREDIT -->
+                <div class="polaris-developer-credit reveal">
+
+                    <div
+                        class="polaris-developer-avatar"
+                        aria-hidden="true"
+                    >
+                        U
+                    </div>
+
+                    <div class="polaris-developer-info">
+                        <small>FOUNDER & DEVELOPER</small>
+
+                        <h3>Umer</h3>
+
+                        <p>
+                            Founder of Jovaryn Games and developer
+                            behind Project Polaris.
+                        </p>
+                    </div>
+
+                    <a
+                        href="https://github.com/UmerCodingGuy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="polaris-developer-link"
+                    >
+                        GitHub: UmerCodingGuy →
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             STORY
+        ========================================== -->
+        <section class="games-section section" id="story">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <span class="section-label">STORY</span>
+
+                    <h2>The World of <span>Polaris</span></h2>
+
+                    <p>
+                        An elemental adventure built around discovery,
+                        challenges, and player progression.
+                    </p>
+                </div>
+
+                <article class="project-card reveal">
+
+                    <div class="project-cover realms-art">
+                        <div class="realms-portal"></div>
+
+                        <div class="realms-symbol realms-symbol-fire">F</div>
+                        <div class="realms-symbol realms-symbol-ice">I</div>
+                        <div class="realms-symbol realms-symbol-lightning">L</div>
+                        <div class="realms-symbol realms-symbol-nature">N</div>
+                        <div class="realms-symbol realms-symbol-shadow">S</div>
+
+                        <strong class="cover-title">
+                            THE ELEMENTAL JOURNEY
+                        </strong>
+                    </div>
+
+                    <div class="project-content">
+                        <span class="project-category">
+                            ADVENTURE OVERVIEW
+                        </span>
+
+                        <h3>A Larger Adventure</h3>
+
+                        <p>
+                            Project Polaris builds upon previous elemental
+                            development projects, focusing on environmental
+                            design, challenges, exploration, and gameplay
+                            progression.
+                        </p>
+
+                        <p>
+                            Its release-candidate stage emphasizes
+                            improving consistency, polishing the experience
+                            and preparing for further evaluation.
+                        </p>
+
+                        <div class="project-actions">
+                            <a
+                                href="../#elemental-realms"
+                                class="project-button secondary-project-button"
+                            >
+                                Explore The Elemental Realms
+                            </a>
+                        </div>
+                    </div>
+
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             FEATURES
+        ========================================== -->
+        <section class="addons-section section" id="features">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <span class="section-label">FEATURES</span>
+
+                    <h2>Project <span>Features</span></h2>
+
+                    <p>
+                        The elemental systems and development areas
+                        behind Project Polaris.
+                    </p>
+                </div>
+
+                <div class="milestone-grid">
+
+                    <article class="milestone completed reveal">
+                        <span>✓</span>
+                        <h3>Elemental Guardians</h3>
+                    </article>
+
+                    <article class="milestone completed reveal">
+                        <span>✓</span>
+                        <h3>Exploration</h3>
+                    </article>
+
+                    <article class="milestone completed reveal">
+                        <span>✓</span>
+                        <h3>Player Progression</h3>
+                    </article>
+
+                    <article class="milestone completed reveal">
+                        <span>✓</span>
+                        <h3>Custom Combat</h3>
+                    </article>
+
+                    <article class="milestone completed reveal">
+                        <span>✓</span>
+                        <h3>Custom Entities</h3>
+                    </article>
+
+                    <article class="milestone completed reveal">
+                        <span>✓</span>
+                        <h3>Elemental Systems</h3>
+                    </article>
+
+                    <article class="milestone completed reveal">
+                        <span>✓</span>
+                        <h3>Animations</h3>
+                    </article>
+
+                    <article class="milestone completed reveal">
+                        <span>✓</span>
+                        <h3>Game Design</h3>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             GAMEPLAY
+        ========================================== -->
+        <section class="games-section section" id="gameplay">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <span class="section-label">GAMEPLAY</span>
+
+                    <h2>Explore. Fight. <span>Progress.</span></h2>
+
+                    <p>
+                        Project Polaris brings its gameplay systems
+                        together as part of one adventure.
+                    </p>
+                </div>
+
+                <div class="learning-grid">
+
+                    <article class="learning-card reveal">
+                        <div class="learning-content">
+                            <span class="project-category">
+                                EXPLORATION
+                            </span>
+
+                            <h3>Explore Environments</h3>
+
+                            <p>
+                                Discover different areas and navigate
+                                the environments developed for Polaris.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="learning-card reveal">
+                        <div class="learning-content">
+                            <span class="project-category">
+                                COMBAT
+                            </span>
+
+                            <h3>Encounter Guardians</h3>
+
+                            <p>
+                                Face custom elemental enemies as part
+                                of the project's combat experience.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="learning-card reveal">
+                        <div class="learning-content">
+                            <span class="project-category">
+                                PROGRESSION
+                            </span>
+
+                            <h3>Advance Through Challenges</h3>
+
+                            <p>
+                                Experience connected challenges and
+                                advancement through the adventure.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="learning-card reveal">
+                        <div class="learning-content">
+                            <span class="project-category">
+                                DEVELOPMENT
+                            </span>
+
+                            <h3>Built With Care</h3>
+
+                            <p>
+                                Project Polaris emphasizes testing,
+                                consistent behavior and player experience.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             PROMOTIONAL ARTWORK GALLERY
+        ========================================== -->
+        <section class="latest-section section" id="gallery">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <span class="section-label">
+                        PROJECT MEDIA
+                    </span>
+
+                    <h2>Polaris <span>Gallery</span></h2>
+
+                    <p>
+                        Promotional artwork for Project Polaris.
+                        Select an image to view it larger.
+                    </p>
+                </div>
+
+                <div class="polaris-gallery">
+
+                    <!-- IMAGE 1 -->
+                    <figure class="polaris-gallery-card reveal">
+
+                        <a
+                            href="../assets/images/polaris/polaris-cover.png"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="View Polaris cover artwork at full size"
+                        >
+                            <img
+                                src="../assets/images/polaris/polaris-cover.png"
+                                alt="Project Polaris featured promotional artwork"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </a>
+
+                        <figcaption class="polaris-gallery-caption">
+                            <small>01 / FEATURED ARTWORK</small>
+                            <h3>Project Polaris</h3>
+                            <p>The featured visual for the project.</p>
+                        </figcaption>
+
+                    </figure>
+
+                    <!-- IMAGE 2 -->
+                    <figure class="polaris-gallery-card reveal">
+
+                        <a
+                            href="../assets/images/polaris/polaris-arena.png"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="View arena artwork at full size"
+                        >
+                            <img
+                                src="../assets/images/polaris/polaris-arena.png"
+                                alt="Arena-themed promotional artwork"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </a>
+
+                        <figcaption class="polaris-gallery-caption">
+                            <small>02 / ENVIRONMENT</small>
+                            <h3>Arena Artwork</h3>
+                            <p>An environment-themed visual.</p>
+                        </figcaption>
+
+                    </figure>
+
+                    <!-- IMAGE 3 -->
+                    <figure class="polaris-gallery-card reveal">
+
+                        <a
+                            href="../assets/images/polaris/polaris-shadow.png"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="View shadow artwork at full size"
+                        >
+                            <img
+                                src="../assets/images/polaris/polaris-shadow.png"
+                                alt="Shadow-themed promotional artwork"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </a>
+
+                        <figcaption class="polaris-gallery-caption">
+                            <small>03 / ELEMENTAL THEME</small>
+                            <h3>Shadow Artwork</h3>
+                            <p>A visual focused on a shadow theme.</p>
+                        </figcaption>
+
+                    </figure>
+
+                    <!-- IMAGE 4 -->
+                    <figure class="polaris-gallery-card reveal">
+
+                        <a
+                            href="../assets/images/polaris/polaris-elements.png"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="View elemental artwork at full size"
+                        >
+                            <img
+                                src="../assets/images/polaris/polaris-elements.png"
+                                alt="Elemental-themed promotional artwork"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </a>
+
+                        <figcaption class="polaris-gallery-caption">
+                            <small>04 / ELEMENTAL THEME</small>
+                            <h3>Elemental Artwork</h3>
+                            <p>A visual featuring elemental themes.</p>
+                        </figcaption>
+
+                    </figure>
+
+                </div>
+
+                <p class="polaris-gallery-note">
+                    Promotional artwork is illustrative and is not
+                    presented as captured Project Polaris gameplay.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             DEVELOPMENT JOURNEY
+        ========================================== -->
+        <section class="studio-timeline-section section" id="journey">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <span class="section-label">
+                        DEVELOPMENT JOURNEY
+                    </span>
+
+                    <h2>The Road to <span>Polaris</span></h2>
+                </div>
+
+                <div class="studio-timeline reveal">
+
+                    <div>
+                        <span>01</span>
+                        <strong>Learning Projects</strong>
+                    </div>
+
+                    <i>↓</i>
+
+                    <div>
+                        <span>02</span>
+                        <strong>Browser Games</strong>
+                    </div>
+
+                    <i>↓</i>
+
+                    <div>
+                        <span>03</span>
+                        <strong>Elemental Tools</strong>
+                    </div>
+
+                    <i>↓</i>
+
+                    <div>
+                        <span>04</span>
+                        <strong>Elemental Guardians</strong>
+                    </div>
+
+                    <i>↓</i>
+
+                    <div>
+                        <span>05</span>
+                        <strong>Elemental Trials</strong>
+                    </div>
+
+                    <i>↓</i>
+
+                    <div>
+                        <span>06</span>
+                        <strong>The Elemental Realms</strong>
+                    </div>
+
+                    <i>↓</i>
+
+                    <div class="timeline-current">
+                        <span>07</span>
+                        <strong>Project Polaris RC1</strong>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             TECHNOLOGIES
+        ========================================== -->
+        <section class="stats-section">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <span class="section-label">
+                        TECHNOLOGIES
+                    </span>
+
+                    <h2>Technologies <span>Used</span></h2>
+                </div>
+
+                <div class="technology-badges reveal">
+                    <span>Minecraft Bedrock</span>
+                    <span>JavaScript</span>
+                    <span>JSON</span>
+                    <span>Behavior Pack</span>
+                    <span>Resource Pack</span>
+                    <span>Custom Entities</span>
+                    <span>Animations</span>
+                    <span>Game Systems</span>
+                    <span>Game Design</span>
+                    <span>Testing</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             TRAILER
+        ========================================== -->
+        <section class="github-section" id="trailer">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <span class="section-label">
+                        GAMEPLAY VIDEO
+                    </span>
+
+                    <h2>Project Polaris <span>Trailer</span></h2>
+
+                    <p>
+                        A trailer can be connected here when
+                        a gameplay video is ready.
+                    </p>
+                </div>
+
+                <div class="polaris-trailer-panel reveal">
+
+                    <div
+                        class="polaris-trailer-icon"
+                        aria-hidden="true"
+                    >
+                        ▶
+                    </div>
+
+                    <h3>Trailer Coming Later</h3>
+
+                    <p>
+                        Video integration is planned for a future update.
+                        Project information and artwork are available now.
+                    </p>
+
+                    <a
+                        href="#"
+                        class="button secondary-button placeholder-link"
+                        data-message="The Project Polaris trailer is not published yet."
+                    >
+                        Watch Trailer
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             FUTURE PLANS
+        ========================================== -->
+        <section class="version-three-section" id="future">
+            <div class="container">
+
+                <div class="version-three-card reveal">
+
+                    <div>
+                        <span class="section-label">
+                            FUTURE PLANS
+                        </span>
+
+                        <h2>Beyond Release Candidate 1</h2>
+
+                        <p>
+                            Project Polaris is not the final release.
+                            Future development will focus on additional
+                            polish, testing, storytelling and improving
+                            the overall gameplay experience.
+                        </p>
+                    </div>
+
+                    <div class="future-nav">
+
+                        <a
+                            href="https://github.com/JovarynGames"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Studio GitHub
+                        </a>
+
+                        <a
+                            href="https://github.com/UmerCodingGuy"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Developer GitHub
+                        </a>
+
+                        <a href="../">
+                            Studio Homepage
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==========================================
+         FOOTER WITH OFFICIAL DEVELOPER CREDIT
+    ========================================== -->
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+
+                    <a href="../" class="footer-logo">
+                        JOVARYN <span>GAMES</span>
+                    </a>
+
+                    <p>Create. Play. Go Beyond.</p>
+
+                    <p>
+                        Founded and developed by
+                        <a
+                            href="https://github.com/UmerCodingGuy"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Umer
+                        </a>.
+                    </p>
+
+                    <div class="footer-version-box">
+                        <span>Website Version 2.1</span>
+
+                        <small>
+                            Last Updated:
+                            <strong id="lastUpdated">
+                                Loading...
+                            </strong>
+                        </small>
+                    </div>
+
+                </div>
+
+                <div class="footer-column">
+                    <h3>Project</h3>
+
+                    <a href="#overview">Overview</a>
+                    <a href="#features">Features</a>
+                    <a href="#gameplay">Gameplay</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="../#elemental-realms">
+                        The Elemental Realms
+                    </a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Developer</h3>
+
+                    <span>Umer</span>
+                    <span>Founder & Developer</span>
+
+                    <a
+                        href="https://github.com/UmerCodingGuy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        UmerCodingGuy
+                    </a>
+
+                    <a
+                        href="https://github.com/JovarynGames"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Jovaryn Games GitHub
+                    </a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Project Status</h3>
+
+                    <span>Release Candidate 1</span>
+                    <span>Not Final Release</span>
+                    <span>Mentor Score: 9.8 / 10</span>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p>
+                    © <span id="currentYear"></span>
+                    Jovaryn Games. All rights reserved.
+                </p>
+
+                <p>
+                    Developed by Umer
+                </p>
+
+                <p>
+                    Website Version 2.1
+                </p>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button
+        class="back-to-top"
+        id="backToTop"
+        type="button"
+        aria-label="Back to top"
+    >
+        ↑
+    </button>
+
+    <script src="../js/script.js"></script>
+
+</body>
+</html>
