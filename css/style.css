@@ -1515,6 +1515,25 @@ img {
     );
 }
 
+.ember-art {
+    background:
+        radial-gradient(
+            circle at 50% 55%,
+            rgba(255, 170, 75, 0.28),
+            transparent 12%
+        ),
+        radial-gradient(
+            ellipse at 50% 100%,
+            rgba(124, 255, 79, 0.16),
+            transparent 44%
+        ),
+        linear-gradient(
+            145deg,
+            #12241d,
+            #080b12 72%
+        );
+}
+
 .temple-sun {
     position: absolute;
 
